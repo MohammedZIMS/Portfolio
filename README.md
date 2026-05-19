@@ -2,8 +2,6 @@
 
 A modern, responsive portfolio website showcasing my work as a backend developer and AI researcher. Built with a focus on clean design, dark/light themes, interactive elements, and seamless user experience.
 
-![Portfolio Preview](https://via.placeholder.com/800x400?text=Portfolio+Screenshot)  
-*(Replace with your actual screenshot URL)*
 
 ## ✨ Features
 
