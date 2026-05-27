@@ -11,9 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <style>
-    /* ─── RESET & ROOT (unchanged, only new skills styles added) ── */
     *,
     *::before,
     *::after {
@@ -40,7 +38,6 @@
       list-style: none
     }
 
-    /* ─── THEME TOKENS ─────────────────────────────────────────── */
     :root {
       --bg: #09090f;
       --bg2: #0f0f1a;
@@ -83,7 +80,6 @@
       --shadow: 0 8px 32px rgba(108, 99, 255, .1);
     }
 
-    /* ─── BASE ──────────────────────────────────────────────────── */
     body {
       font-family: var(--sans);
       background: var(--bg);
@@ -111,7 +107,6 @@
       color: #fff
     }
 
-    /* ─── NOISE TEXTURE ─────────────────────────────────────────── */
     body::before {
       content: '';
       position: fixed;
@@ -132,11 +127,6 @@
       opacity: .4;
     }
 
-    body.light::after {
-      opacity: .25
-    }
-
-    /* ─── NAV (unchanged) ───────────────────────────────────────── */
     .navbar {
       position: fixed;
       top: 0;
@@ -149,7 +139,6 @@
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
-      transition: background .3s, border-color .3s;
     }
 
     body.light .navbar {
@@ -249,7 +238,6 @@
       display: none
     }
 
-    /* Mobile nav */
     .mobile-nav {
       display: none;
       position: fixed;
@@ -279,11 +267,6 @@
       transition: color .2s;
     }
 
-    .mobile-nav a:hover {
-      color: var(--accent)
-    }
-
-    /* ─── LAYOUT ────────────────────────────────────────────────── */
     .wrapper {
       position: relative;
       z-index: 1
@@ -330,7 +313,7 @@
       margin-bottom: 2.5rem;
     }
 
-    /* HERO (unchanged)  */
+    /* HERO */
     #home {
       min-height: 100vh;
       display: flex;
@@ -570,11 +553,6 @@
       padding: .65rem 1rem;
       display: flex;
       flex-direction: column;
-      transition: border-color .2s;
-    }
-
-    .stat-chip:hover {
-      border-color: var(--accent)
     }
 
     .stat-chip-num {
@@ -632,7 +610,7 @@
       }
     }
 
-    /* ─── ABOUT (unchanged) ─────────────────────────────────────── */
+    /* ABOUT */
     .about-grid {
       display: grid;
       grid-template-columns: 1.3fr 1fr;
@@ -648,7 +626,7 @@
     }
 
     .about-text b {
-      color: var(--cyan);
+      color: var(--text-bright);
       font-weight: 600
     }
 
@@ -665,11 +643,6 @@
       border-radius: var(--radius);
       padding: 1.1rem;
       transition: border-color .2s, transform .2s;
-    }
-
-    .a-stat:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px)
     }
 
     .a-stat-n {
@@ -738,103 +711,7 @@
       color: var(--green);
     }
 
-    .edu-item {
-      padding: .8rem 1.25rem;
-      border-bottom: 1px solid rgba(34, 34, 64, .5);
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: .75rem;
-      align-items: start;
-    }
-
-    .edu-item:last-child {
-      border-bottom: none;
-    }
-
-    .edu-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      background: var(--accent-dim);
-      border: 1px solid var(--border2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: .85rem;
-      flex-shrink: 0;
-      margin-top: .15rem;
-    }
-
-    .edu-degree {
-      color: var(--text-bright);
-      font-weight: 600;
-      font-size: .88rem;
-    }
-
-    .edu-school {
-      color: var(--accent);
-      font-size: .78rem;
-      margin: .15rem 0;
-    }
-
-    .edu-year {
-      color: var(--text-dim);
-      font-size: .72rem;
-      font-family: var(--mono);
-    }
-
-    .badge-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin: 0.75rem 0;
-    }
-
-    .badge {
-      background: var(--accent-dim);
-      border: 1px solid var(--border2);
-      color: var(--accent);
-      font-size: 0.75rem;
-      font-weight: 500;
-      padding: 0.35rem 0.9rem;
-      border-radius: 40px;
-      letter-spacing: 0.02em;
-      transition: all 0.2s;
-    }
-
-    .badge:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    .edu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .extracard {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.2rem;
-      transition: border-color 0.2s;
-    }
-
-    .extracard:hover {
-      border-color: var(--accent);
-    }
-
-    .extracard i {
-      color: var(--accent);
-      font-size: 1.2rem;
-      margin-right: 0.5rem;
-    }
-
-    /* ─── NEW SKILLS SECTION (redesigned) ───────────────────────── */
+    /* SKILLS */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -848,13 +725,11 @@
       border-radius: var(--radius);
       padding: 1.4rem;
       transition: all 0.25s ease;
-      backdrop-filter: blur(4px);
     }
 
     .skill-card:hover {
       border-color: var(--accent);
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(108, 99, 255, 0.12);
     }
 
     .skill-header {
@@ -876,19 +751,12 @@
       justify-content: center;
       font-size: 1.4rem;
       color: var(--accent);
-      transition: 0.2s;
-    }
-
-    .skill-card:hover .skill-icon {
-      background: var(--accent);
-      color: white;
     }
 
     .skill-title {
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--text-bright);
-      letter-spacing: -0.01em;
     }
 
     .skill-items {
@@ -905,14 +773,6 @@
       font-size: 0.75rem;
       font-weight: 500;
       color: var(--text);
-      transition: all 0.2s;
-    }
-
-    .skill-tag:hover {
-      background: var(--accent-dim);
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
     }
 
     /* ─── PROJECTS (unchanged) ──────────────────────────────────── */
@@ -1100,7 +960,146 @@
       margin-bottom: .6rem;
     }
 
-    /* ─── CONTACT (unchanged) ───────────────────────────────────── */
+    /* Show More Button */
+    .show-more-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .show-more-hint {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .show-more-btn {
+      background: transparent;
+      border: 1px solid var(--border2);
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--accent);
+      cursor: pointer;
+      transition: all 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--accent-dim);
+    }
+
+    .show-more-btn:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .proj-count-pill {
+      background: var(--accent);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 40px;
+      margin-left: 0.3rem;
+    }
+
+    .show-more-btn:hover .proj-count-pill {
+      background: white;
+      color: var(--accent);
+    }
+
+    .btn-icon {
+      transition: transform 0.25s;
+    }
+
+    .show-more-btn.expanded .btn-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Hidden project cards */
+    .hidden-proj {
+      display: none;
+    }
+
+    .hidden-proj.visible {
+      display: flex;
+    }
+
+    /* Education icons */
+    .edu-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* Education typography */
+    .edu-degree {
+      font-weight: 700;
+      color: var(--text-bright);
+    }
+
+    .edu-school {
+      font-size: .85rem;
+      color: var(--text);
+    }
+
+    .edu-year {
+      font-size: .75rem;
+      color: var(--text-dim);
+      margin-top: .2rem;
+    }
+
+    /* Better footer responsiveness */
+    footer {
+      width: 100%;
+    }
+
+    /* Fix form submit alignment */
+    .form-submit {
+      background: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Better mobile spacing */
+    @media(max-width:560px) {
+      .section {
+        padding: 4rem 1rem;
+      }
+
+      .hero-stats {
+        gap: .6rem;
+      }
+
+      .stat-chip {
+        flex: 1 1 calc(50% - .6rem);
+      }
+
+      .hero-cta {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Contact & Footer */
+
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1.1fr;
@@ -1250,10 +1249,10 @@
     .form-submit {
       width: 100%;
       padding: .85rem;
-
       color: #fff;
       border: 2px solid var(--accent);
       border-radius: 8px;
+      background-color: #0d0d20;
       font-family: var(--sans);
       font-size: .88rem;
       font-weight: 700;
@@ -1283,6 +1282,31 @@
 
     #form-msg.err {
       color: var(--orange);
+    }
+
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent);
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      border: none;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
     }
 
     /* ─── FOOTER (unchanged) ────────────────────────────────────── */
@@ -1327,7 +1351,6 @@
       color: var(--accent);
     }
 
-    /* ─── REVEAL ANIMATIONS ─────────────────────────────────────── */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -1345,30 +1368,6 @@
       animation: fadeUp .75s forwards
     }
 
-    .h-anim:nth-child(1) {
-      animation-delay: .1s;
-    }
-
-    .h-anim:nth-child(2) {
-      animation-delay: .2s;
-    }
-
-    .h-anim:nth-child(3) {
-      animation-delay: .3s;
-    }
-
-    .h-anim:nth-child(4) {
-      animation-delay: .4s;
-    }
-
-    .h-anim:nth-child(5) {
-      animation-delay: .55s;
-    }
-
-    .h-anim:nth-child(6) {
-      animation-delay: .7s;
-    }
-
     @keyframes fadeUp {
       to {
         opacity: 1;
@@ -1376,24 +1375,57 @@
       }
     }
 
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .edu-item {
+      padding: .8rem 1.25rem;
+      border-bottom: 1px solid rgba(34, 34, 64, .5);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: .75rem;
+      align-items: start;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 0.75rem 0;
+    }
+
+    .badge {
+      background: var(--accent-dim);
+      border: 1px solid var(--border2);
+      color: var(--accent);
+      font-size: 0.75rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 40px;
+    }
+
+    .extracard {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      margin-top: 2rem;
+    }
+
     @media(max-width:860px) {
-      .hero-grid {
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
 
       .hero-avatar-col {
         order: -1;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
       }
 
       .edu-grid {
@@ -1414,25 +1446,14 @@
     }
 
     @media(max-width:560px) {
-      .hero-name {
-        font-size: 2.2rem;
-      }
-
       .projects-grid {
         grid-template-columns: 1fr;
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
       }
     }
   </style>
 </head>
 
 <body>
-
   <nav class="navbar">
     <div class="nav-inner">
       <div class="nav-logo"><span>Mohammed</span>ZIMS</div>
@@ -1444,39 +1465,29 @@
         <li><a href="#education">Background</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="nav-actions">
-        <button class="icon-btn" id="themeBtn" title="Toggle theme"><i class="fas fa-moon"></i></button>
-        <button class="icon-btn hamburger" id="hamburger" title="Menu"><i class="fas fa-bars"></i></button>
-      </div>
+      <div class="nav-actions"><button class="icon-btn" id="themeBtn"><i class="fas fa-moon"></i></button><button
+          class="icon-btn hamburger" id="hamburger"><i class="fas fa-bars"></i></button></div>
     </div>
   </nav>
-
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#home" onclick="closeMobile()">Home</a>
-    <a href="#about" onclick="closeMobile()">About</a>
-    <a href="#projects" onclick="closeMobile()">Projects</a>
-    <a href="#skills" onclick="closeMobile()">Skills</a>
-    <a href="#education" onclick="closeMobile()">Background</a>
-    <a href="#contact" onclick="closeMobile()">Contact</a>
-  </div>
-
+  <div class="mobile-nav" id="mobileNav"><a href="#home" onclick="closeMobile()">Home</a><a href="#about"
+      onclick="closeMobile()">About</a><a href="#projects" onclick="closeMobile()">Projects</a><a href="#skills"
+      onclick="closeMobile()">Skills</a><a href="#education" onclick="closeMobile()">Background</a><a href="#contact"
+      onclick="closeMobile()">Contact</a></div>
   <div class="wrapper">
     <section id="home">
       <div class="hero-grid">
         <div>
           <div class="hero-eyebrow h-anim">Backend Engineer · AI Researcher</div>
           <div class="hero-name h-anim">Md. Zahidul Islam <span class="grad">Mehedi</span></div>
-          <div class="hero-sub h-anim">Building <b>scalable APIs</b> &amp; intelligent systems that make a
-            difference.</div>
-          <div class="hero-cta h-anim">
-            <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Projects</a>
-            <a href="#contact" class="btn btn-ghost"><i class="fas fa-paper-plane"></i> Hire Me</a>
-            <a href="./assets/file/My_Resume.pdf" target="_blank" class="btn btn-ghost"><i class="fas fa-file-pdf"></i>
-              Resume</a>
+          <div class="hero-sub h-anim">Building <b>scalable APIs</b> &amp; intelligent systems that make a difference.
           </div>
+          <div class="hero-cta h-anim"><a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i>
+              View Projects</a><a href="#contact" class="btn btn-ghost"><i class="fas fa-paper-plane"></i> Hire Me</a><a
+              href="https://drive.google.com/file/d/1zEKmQ0-azOa7U6vmbKCcwd9ORyt4TvQy/view?usp=sharing" target="_blank"
+              class="btn btn-ghost"><i class="fas fa-file-pdf"></i> Resume</a></div>
           <div class="hero-stats h-anim">
-            <div class="stat-chip"><span class="stat-chip-num">99.59%</span><span class="stat-chip-lbl">Best
-                AI Accuracy</span></div>
+            <div class="stat-chip"><span class="stat-chip-num">99.59%</span><span class="stat-chip-lbl">Best AI
+                Accuracy</span></div>
             <div class="stat-chip"><span class="stat-chip-num">5+</span><span class="stat-chip-lbl">Projects
                 Shipped</span></div>
             <div class="stat-chip"><span class="stat-chip-num">2</span><span class="stat-chip-lbl">Research
@@ -1489,9 +1500,8 @@
           <div class="avatar-wrap">
             <div class="avatar-ring"></div>
             <div class="avatar-ring-revars"></div>
-            <div class="avatar-inner">
-              <img src="./assets/image/MyImage1.png" alt="Md. Zahidul Islam Mehedi" id="avatarImg"
-                onerror="this.style.display='none';document.getElementById('avatarFallback').style.display='flex'" />
+            <div class="avatar-inner"><img src="./assets/image/MyImage1.png" alt="Mehedi" id="avatarImg"
+                onerror="this.style.display='none';document.getElementById('avatarFallback').style.display='flex'">
               <div class="avatar-fallback" id="avatarFallback"><i class="fas fa-user-astronaut"></i></div>
             </div>
             <div class="avatar-badge">Available</div>
@@ -1499,36 +1509,32 @@
         </div>
       </div>
       <div class="scroll-hint">
-        <div class="scroll-line"></div>
-        scroll to explore
+        <div class="scroll-line"></div>scroll to explore
       </div>
     </section>
-
     <div class="section-divider"></div>
-
     <section id="about" class="section">
       <div class="sec-eyebrow">About Me</div>
       <div class="sec-title">Who I am &amp; what I build.</div>
       <div class="about-grid reveal">
         <div>
           <div class="about-text">
-            <p>I'm a final-year <b>Computer Science student at R.P. Shaha University</b> with deep hands-on
-              experience building production-grade backend systems and AI-powered solutions.</p>
-            <p>My backend expertise covers <b>REST API design, authentication, payment integrations</b>, and
-              database architecture — delivered with Node.js, Express, and MongoDB/PostgreSQL.</p>
-            <p>On the research front, I apply <b>deep learning and transfer learning</b> to real-world
-              agricultural problems — achieving 99.59% accuracy in seed classification and 86.49% in
-              multi-model insect pest detection benchmarks.</p>
+            <p>I'm a final-year <b>Computer Science student at R.P. Shaha University</b> with deep hands-on experience
+              building production-grade backend systems and AI-powered solutions.</p>
+            <p>My backend expertise covers <b>REST API design, authentication, payment integrations</b>, and database
+              architecture — delivered with Node.js, Express, and MongoDB/PostgreSQL.</p>
+            <p>On the research front, I apply <b>deep learning and transfer learning</b> to real-world agricultural
+              problems — achieving 99.59% accuracy in seed classification and 86.49% in multi-model insect pest
+              detection benchmarks.</p>
             <p>I believe great software is intentional: <b>readable, scalable, and built to last</b>.</p>
           </div>
           <div class="about-stats">
             <div class="a-stat">
-              <div class="a-stat-n">99.59<span style="font-size:.9rem;color:var(--text-dim)">%</span>
-              </div>
+              <div class="a-stat-n">99.59%</div>
               <div class="a-stat-l">Best Model Accuracy</div>
             </div>
             <div class="a-stat">
-              <div class="a-stat-n">5<span style="font-size:.9rem;color:var(--text-dim)">+</span></div>
+              <div class="a-stat-n">5+</div>
               <div class="a-stat-l">Projects Built</div>
             </div>
             <div class="a-stat">
@@ -1536,20 +1542,19 @@
               <div class="a-stat-l">Research Studies</div>
             </div>
             <div class="a-stat">
-              <div class="a-stat-n">4<span style="font-size:.9rem;color:var(--text-dim)">+</span></div>
+              <div class="a-stat-n">4+</div>
               <div class="a-stat-l">Languages Known</div>
             </div>
           </div>
         </div>
         <div>
-          <div class="info-panel" style="margin-bottom:1rem">
-            <div class="info-panel-head"><i class="fas fa-id-card"></i>&nbsp; Personal Info</div>
-            <div class="info-row"><span class="info-k">Location</span><span class="info-v">Narayanganj,
-                Dhaka, BD</span></div>
+          <div class="info-panel">
+            <div class="info-panel-head"><i class="fas fa-id-card"></i> Personal Info</div>
+            <div class="info-row"><span class="info-k">Location</span><span class="info-v">Narayanganj, Dhaka, BD</span>
+            </div>
             <div class="info-row"><span class="info-k">Email</span><span class="info-v">zimss75656@gmail.com</span>
             </div>
-            <div class="info-row"><span class="info-k">Phone</span><span class="info-v">+880
-                1533-778364</span></div>
+            <div class="info-row"><span class="info-k">Phone</span><span class="info-v">+880 1533-778364</span></div>
             <div class="info-row"><span class="info-k">Languages</span><span class="info-v">Bangla · English
                 (Pro)</span></div>
             <div class="info-row"><span class="info-k">Status</span><span class="info-v avail">Open to
@@ -1558,37 +1563,67 @@
         </div>
       </div>
     </section>
-
     <div class="section-divider"></div>
-
     <section id="projects" class="section">
       <div class="sec-eyebrow">Work</div>
       <div class="sec-title">Projects that<br />ship and scale.</div>
-      <div class="projects-grid">
+      <div class="projects-grid" id="projectsGrid">
+
         <div class="proj-card reveal">
-          <img class="proj-thumb" src="./assets/image/YoutubeVideoThumbnail_LMS.webp" alt="LMS Demo"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-          <div class="proj-thumb-placeholder" style="display:none"><i class="fas fa-chalkboard-user"></i>
-          </div>
+          <img class="proj-thumb" src="./assets/image/YoutubeVideoThumbnail_LMS.webp" alt="LMS"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="proj-thumb-placeholder" style="display:none"><i class="fas fa-chalkboard-user"></i></div>
           <div class="proj-body">
             <div class="proj-type">Full-Stack Web App</div>
             <div class="proj-name">Learning Management System</div>
-            <div class="proj-desc">Production e-learning platform. Instructors create courses; students
-              enroll, watch lectures, track progress, and pay securely via Stripe.</div>
+            <div class="proj-desc">Production e-learning platform. Instructors create courses; students enroll, watch
+              lectures, track progress, and pay securely via Stripe.</div>
             <div class="proj-tags">
-              <span class="tag tag-cyan">React</span><span class="tag tag-blue">Redux Toolkit</span><span
-                class="tag tag-green">Node.js</span><span class="tag tag-green">Express</span><span
-                class="tag tag-blue">MongoDB</span><span class="tag tag-orange">Stripe</span>
+              <span class="tag tag-cyan">React</span>
+              <span class="tag tag-blue">Redux Toolkit</span>
+              <span class="tag tag-green">Node.js</span>
+              <span class="tag tag-green">Express</span><span class="tag tag-blue">MongoDB</span>
+              <span class="tag tag-orange">Stripe</span>
             </div>
             <div class="proj-links">
               <a href="https://github.com/MohammedZIMS/Learning-Management-System" target="_blank" class="proj-link">
                 <i class="fab fa-github"></i> GitHub
               </a>
-              <a href="https://youtu.be/Jdd8lAhho8Q?si=eMJGVEIFK5TkwYv8" target="_blank" class="proj-link">
+              <a href="https://youtu.be/Jdd8lAhho8Q" target="_blank" class="proj-link">
                 <i class="fab fa-youtube"></i> Demo
               </a>
-              <a href="./assets/file/Learning_Management_System.pdf" target="_blank" class="proj-link">
+              <a href="https://drive.google.com/file/d/1QYyMCmBsdAIDUmh2F26VdlEOKGGjNizW/view" target="_blank"
+                class="proj-link">
                 <i class="fa-regular fa-file-lines"></i> Document
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card reveal">
+          <img class="proj-thumb" src="./assets/image/YoutubeVideoThumbnail_CDDS.png" alt="Cyberpunk Drone"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="proj-thumb-placeholder"
+            style="display:none; background: radial-gradient(circle at 30% 20%, #0f1722, #020617); flex-direction:column;">
+            <i class="fas fa-gamepad" style="font-size: 3rem; color: var(--cyan);"></i><span
+              style="font-size:0.7rem; font-family:var(--mono);">CYBERPUNK DRONE</span>
+          </div>
+          <div class="proj-body">
+            <div class="proj-type">Computer Graphics · 3D Game</div>
+            <div class="proj-name">Cyberpunk Drone Delivery Simulator</div>
+            <div class="proj-desc">3D drone delivery simulation in a futuristic cyberpunk city — rendering, real‑time
+              collision detection, lighting, and interactive UI built with Three.js.</div>
+            <div class="proj-tags"><span class="tag tag-green">JavaScript</span><span
+                class="tag tag-green">Three.js</span><span class="tag tag-blue">WebGL</span><span
+                class="tag tag-cyan">HTML5</span><span class="tag tag-cyan">CSS3</span></div>
+            <div class="proj-links">
+              <a href="https://github.com/MohammedZIMS/Cyberpunk_Drone_Delivery" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://youtu.be/AGUPBhqnblI" target="_blank" class="proj-link">
+                <i class="fab fa-youtube"></i> Demo
+              </a>
+              <a href="https://mohammedzims.github.io/Cyberpunk_Drone_Delivery/" target="_blank" class="proj-link">
+                <i class="fas fa-play"></i> Game
               </a>
             </div>
           </div>
@@ -1598,8 +1633,8 @@
           <div class="proj-body">
             <div class="proj-type">Enterprise System</div>
             <div class="proj-name">Narayanganj City Corp Internal App</div>
-            <div class="proj-desc">Centralized internal system to digitize government workflows, manage
-              records, and improve collaboration across departments.</div>
+            <div class="proj-desc">Centralized internal system to digitize government workflows, manage records, and
+              improve collaboration across departments.</div>
             <div class="proj-tags"><span class="tag tag-green">Node.js</span><span
                 class="tag tag-green">Express</span><span class="tag tag-blue">MongoDB</span><span
                 class="tag tag-cyan">React</span></div>
@@ -1607,38 +1642,32 @@
                   class="fa-solid fa-lock"></i> Private Repo</span></div>
           </div>
         </div>
+
         <div class="proj-card reveal"><img class="proj-thumb" src="./assets/image/YoutubeVideoThumbnail_EBMS.webp"
-            alt="EBMS Demo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            alt="EBMS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="proj-thumb-placeholder" style="display:none"><i class="fas-fa-bolt"></i></div>
           <div class="proj-body">
             <div class="proj-type">Desktop Application</div>
             <div class="proj-name">Electricity Billing System</div>
-            <div class="proj-desc">Desktop app for electricity billing — bill calculation, customer
-              management, and payment tracking.</div>
+            <div class="proj-desc">Desktop app for electricity billing — bill calculation, customer management, and
+              payment tracking.</div>
             <div class="proj-tags"><span class="tag tag-orange">Java</span><span class="tag tag-blue">SQL</span><span
                 class="tag tag-green">OOP</span></div>
-            <div class="proj-links">
-              <a href="https://github.com/MohammedZIMS/Electricity_Billing_System" target="_blank" class="proj-link">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-              <a href="https://youtu.be/P10g7y3hpFA?si=cpJbL2CWxz7jV_Sr" target="_blank" class="proj-link">
-                <i class="fab fa-youtube"></i> Demo
-              </a>
-              <a href="https://drive.google.com/file/d/1y8yLjaYMGx0v-KqVCg5LWi-FCM8aqJIQ/view?usp=drive_link"
-                target="_blank" class="proj-link">
-                <i class="fa-regular fa-file-lines"></i> Document
-              </a>
-            </div>
+            <div class="proj-links"><a href="https://github.com/MohammedZIMS/Electricity_Billing_System" target="_blank"
+                class="proj-link"><i class="fab fa-github"></i> GitHub</a><a href="https://youtu.be/P10g7y3hpFA"
+                target="_blank" class="proj-link"><i class="fab fa-youtube"></i> Demo</a><a
+                href="https://drive.google.com/file/d/1y8yLjaYMGx0v-KqVCg5LWi-FCM8aqJIQ/view" target="_blank"
+                class="proj-link"><i class="fa-regular fa-file-lines"></i> Document</a></div>
           </div>
         </div>
         <div class="proj-card reveal"><img class="proj-thumb" src="./assets/image/YoutubeVideoThumbnail_RMRA(Rover).jpg"
-            alt="Rover Demo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            alt="Rover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="proj-thumb-placeholder" style="display:none"><i class="fas fa-robot"></i></div>
           <div class="proj-body">
             <div class="proj-type">Hardware · Robotics · IoT</div>
             <div class="proj-name">Remote Rover + Manipulator Arm</div>
-            <div class="proj-desc">Remote-controlled robotic rover with a precision manipulator arm and
-              multi-sensor integration.</div>
+            <div class="proj-desc">Remote-controlled robotic rover with a precision manipulator arm and multi-sensor
+              integration.</div>
             <div class="proj-tags"><span class="tag tag-orange">Embedded</span><span
                 class="tag tag-green">Arduino</span><span class="tag tag-blue">Sensors</span></div>
             <div class="proj-links"><a href="https://github.com/imr4n4lif/remote-controlled-rover-with-manipulator-arm"
@@ -1655,19 +1684,18 @@
             <div class="proj-type research">Deep Learning · Computer Vision</div>
             <div class="proj-name">Vegetable Seed Classification</div>
             <div class="proj-accuracy">99.59%</div>
-            <div class="proj-desc">Classified 14 vegetable seed types using MobileNetV3 + transfer learning.
-            </div>
+            <div class="proj-desc">Classified 14 vegetable seed types using MobileNetV3 + transfer learning.</div>
             <div class="proj-tags"><span class="tag tag-orange">TensorFlow</span><span
                 class="tag tag-blue">CNN</span><span class="tag tag-cyan">MobileNetV3</span><span
                 class="tag tag-green">EfficientNet</span></div>
-                <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i
+            <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i
+                  class="fa-regular fa-file-lines"></i> Paper in Progress</span>
+            </div>
+            <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i
                   class="fa-regular fa-file-lines"></i> Paper in Progress</span></div>
-            <!-- <div class="proj-links"><a href="https://github.com/imr4n4lif/seed-classification" target="_blank"
-                class="proj-link"><i class="fab fa-github"></i> Research Repo</a></div> -->
-            
           </div>
         </div>
-        <div class="proj-card reveal">
+        <div class="proj-card reveal hidden-proj">
           <div class="proj-thumb-placeholder" style="background:linear-gradient(135deg,#1a0d0a,#1a130a)"><i
               class="fas fa-bug" style="color:#ff7b5a"></i></div>
           <div class="proj-body">
@@ -1675,23 +1703,22 @@
             <div class="proj-type research">Agricultural AI · Benchmark Study</div>
             <div class="proj-name">Insect Classification for Pest Detection</div>
             <div class="proj-accuracy">86.49%</div>
-            <div class="proj-desc">Benchmark comparing EfficientNetV2, MobileViT, Swin Transformer, and
-              EfficientFormer for agricultural pest detection.</div>
+            <div class="proj-desc">Benchmark comparing EfficientNetV2, MobileViT, Swin Transformer, and EfficientFormer
+              for agricultural pest detection.</div>
             <div class="proj-tags"><span class="tag tag-orange">Swin Transformer</span><span
-                class="tag tag-blue">MobileViT</span><span class="tag tag-cyan">EfficientNetV2</span>
-            </div>
+                class="tag tag-blue">MobileViT</span><span class="tag tag-cyan">EfficientNetV2</span></div>
             <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i
                   class="fa-regular fa-file-lines"></i> Paper in Progress</span></div>
           </div>
         </div>
       </div>
+      <div class="show-more-wrap" id="showMoreWrap">
+        <div class="show-more-hint">Showing <span id="visibleCount">6</span> of 7 projects</div>
+        <button class="show-more-btn" id="showMoreBtn"><i class="fas fa-chevron-down btn-icon"></i> Show More Projects
+          <span class="proj-count-pill">+1</span></button>
+      </div>
     </section>
-
-
     <div class="section-divider"></div>
-
-
-    <!-- NEW SKILLS SECTION: redesigned card-based grid -->
     <section id="skills" class="section">
       <div class="sec-eyebrow">Toolkit</div>
       <div class="sec-title">Technologies I build with.</div>
@@ -1701,11 +1728,8 @@
             <div class="skill-icon"><i class="fas fa-code"></i></div>
             <div class="skill-title">Languages</div>
           </div>
-          <div class="skill-items">
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL</span>
+          <div class="skill-items"><span class="skill-tag">Java</span><span class="skill-tag">JavaScript</span><span
+              class="skill-tag">C/C++</span><span class="skill-tag">Python</span><span class="skill-tag">SQL</span>
           </div>
         </div>
         <div class="skill-card">
@@ -1713,68 +1737,46 @@
             <div class="skill-icon"><i class="fas fa-server"></i></div>
             <div class="skill-title">Backend</div>
           </div>
-          <div class="skill-items">
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Express.js</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">JWT Auth</span>
-            <span class="skill-tag">Stripe</span>
-          </div>
+          <div class="skill-items"><span class="skill-tag">Node.js</span><span class="skill-tag">Express.js</span><span
+              class="skill-tag">REST APIs</span><span class="skill-tag">JWT Auth</span><span
+              class="skill-tag">Stripe</span></div>
         </div>
         <div class="skill-card">
           <div class="skill-header">
             <div class="skill-icon"><i class="fas fa-paintbrush"></i></div>
             <div class="skill-title">Frontend</div>
           </div>
-          <div class="skill-items">
-            <span class="skill-tag">React.js</span>
-            <span class="skill-tag">Redux Toolkit</span>
-            <span class="skill-tag">RTK Query</span>
-            <span class="skill-tag">Tailwind CSS</span>
-          </div>
+          <div class="skill-items"><span class="skill-tag">React.js</span><span class="skill-tag">Redux
+              Toolkit</span><span class="skill-tag">RTK Query</span><span class="skill-tag">Tailwind CSS</span></div>
         </div>
         <div class="skill-card">
           <div class="skill-header">
             <div class="skill-icon"><i class="fas fa-database"></i></div>
             <div class="skill-title">Databases</div>
           </div>
-          <div class="skill-items">
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">MySQL</span>
-          </div>
+          <div class="skill-items"><span class="skill-tag">MongoDB</span><span class="skill-tag">PostgreSQL</span><span
+              class="skill-tag">MySQL</span></div>
         </div>
         <div class="skill-card">
           <div class="skill-header">
             <div class="skill-icon"><i class="fas fa-brain"></i></div>
             <div class="skill-title">AI / Deep Learning</div>
           </div>
-          <div class="skill-items">
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">Transfer Learning</span>
-            <span class="skill-tag">CNN / ViT</span>
-            <span class="skill-tag">MobileNetV3</span>
-            <span class="skill-tag">EfficientNet</span>
-            <span class="skill-tag">Swin Transformer</span>
-          </div>
+          <div class="skill-items"><span class="skill-tag">TensorFlow</span><span class="skill-tag">Transfer
+              Learning</span><span class="skill-tag">CNN / ViT</span><span class="skill-tag">MobileNetV3</span><span
+              class="skill-tag">EfficientNet</span><span class="skill-tag">Swin Transformer</span></div>
         </div>
         <div class="skill-card">
           <div class="skill-header">
             <div class="skill-icon"><i class="fas fa-toolbox"></i></div>
             <div class="skill-title">Tools & Principles</div>
           </div>
-          <div class="skill-items">
-            <span class="skill-tag">Git & GitHub</span>
-            <span class="skill-tag">VS Code</span>
-            <span class="skill-tag">Docker</span>
-          </div>
+          <div class="skill-items"><span class="skill-tag">Git & GitHub</span><span class="skill-tag">VS
+              Code</span><span class="skill-tag">Docker</span></div>
         </div>
       </div>
     </section>
-
     <div class="section-divider"></div>
-
-    <!-- Education & Credentials section (unchanged) -->
     <section id="education" class="section">
       <div class="sec-eyebrow">Credentials</div>
       <div class="sec-title">Education &amp; achievements.</div>
@@ -1808,254 +1810,184 @@
         </div>
         <div class="info-panel">
           <div class="info-panel-head"><i class="fas fa-certificate"></i> Certifications</div>
-          <div class="badge-list" style="padding: 1rem 1.25rem 0 1.25rem;">
-            <span class="badge">Advanced Content Creation With AI</span>
-            <span class="badge">Advanced Creative Design Mastery</span>
-          </div>
-          <div class="info-panel-head" style="margin-top: 0.8rem;"><i class="fas fa-dumbbell"></i> Strengths
-          </div>
-          <div class="badge-list" style="padding: 0 1.25rem 0.5rem 1.25rem;">
-            <span class="badge">Problem-solving</span>
-            <span class="badge">Backend Architecture</span>
-            <span class="badge">Fast Learner</span>
-            <span class="badge">Team Player</span>
-          </div>
+          <div class="badge-list" style="padding: 1rem 1.25rem 0 1.25rem;"><span class="badge">Advanced Content Creation
+              With AI</span><span class="badge">Advanced Creative Design Mastery</span></div>
+          <div class="info-panel-head"><i class="fas fa-dumbbell"></i> Strengths</div>
+          <div class="badge-list" style="padding: 0 1.25rem 0.5rem 1.25rem;"><span
+              class="badge">Problem-solving</span><span class="badge">Backend Architecture</span><span
+              class="badge">Fast
+              Learner</span><span class="badge">Team Player</span></div>
         </div>
         <div class="info-panel">
           <div class="info-panel-head"><i class="fas fa-language"></i> Languages & Interests</div>
-          <div class="info-row"><span class="info-k">🇧🇩 Bangla</span><span class="info-v">Native</span>
-          </div>
+          <div class="info-row"><span class="info-k">🇧🇩 Bangla</span><span class="info-v">Native</span></div>
           <div class="info-row"><span class="info-k">🇬🇧 English</span><span class="info-v">Professional</span></div>
-          <div class="info-row" style="border-bottom: none; margin-top: 0.5rem;">
-            <span class="info-k"><i class="fas fa-heart" style="color:var(--orange)"></i> Interests</span>
-            <span class="info-v">Software Dev · AI · Backend Architecture · Research</span>
-          </div>
+          <div class="info-row"><span class="info-k"><i class="fas fa-heart"></i> Interests</span><span
+              class="info-v">Software Dev · AI · Backend Architecture · Research</span></div>
         </div>
       </div>
-      <div class="extracard reveal" style="margin-top: 2rem;">
-        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-          <i class="fas fa-medal" style="font-size: 1.8rem;"></i>
+      <div class="extracard reveal">
+        <div style="display: flex; align-items: center; gap: 1rem;"><i class="fas fa-medal"
+            style="font-size: 1.8rem;"></i>
           <div>
-            <div style="font-weight: 700; color: var(--text-bright);">Extra-Curricular & Volunteer Work
-            </div>
-            <div style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.3rem;">
-              ✦ Campus Ambassador – ICT Olympiad Bangladesh (Season 3) · R.P. Shaha University <br>
-              ✦ Volunteer – Bangladesh Red Crescent Society (BDRCS) <br>
-              ✦ Community Youth Volunteer – Cab Bangladesh
-            </div>
+            <div style="font-weight: 700;">Extra-Curricular & Volunteer Work</div>
+            <div style="font-size: 0.85rem;">✦ Campus Ambassador – ICT Olympiad Bangladesh (Season 3) · R.P. Shaha
+              University <br>✦ Volunteer – Bangladesh Red Crescent Society (BDRCS) <br>✦ Community Youth Volunteer – Cab
+              Bangladesh</div>
           </div>
         </div>
       </div>
     </section>
-
     <div class="section-divider"></div>
-
-
     <section id="contact" class="section">
       <div class="sec-eyebrow">Contact</div>
       <div class="sec-title">Let's Connect</div>
       <div class="contact-grid reveal">
-        <div>
-          <a href="mailto:zimss75656@gmail.com" class="clink">
+        <div><a href="mailto:zimss75656@gmail.com" class="clink">
             <div class="clink-icon"><i class="fas fa-envelope"></i></div>
             <div>
               <div class="clink-lbl">Email</div>
               <div class="clink-val">zimss75656@gmail.com</div>
             </div><span class="clink-arr"><i class="fas fa-arrow-right"></i></span>
-          </a>
-          <a href="tel:+8801533778364" class="clink">
+          </a><a href="tel:+8801533778364" class="clink">
             <div class="clink-icon"><i class="fas fa-phone"></i></div>
             <div>
               <div class="clink-lbl">Phone</div>
               <div class="clink-val">+880 1533-778364</div>
             </div><span class="clink-arr"><i class="fas fa-arrow-right"></i></span>
-          </a>
-          <a href="https://github.com/MohammedZIMS" target="_blank" class="clink">
+          </a><a href="https://github.com/MohammedZIMS" target="_blank" class="clink">
             <div class="clink-icon"><i class="fab fa-github"></i></div>
             <div>
               <div class="clink-lbl">GitHub</div>
               <div class="clink-val">github.com/MohammedZIMS</div>
             </div><span class="clink-arr"><i class="fas fa-arrow-right"></i></span>
-          </a>
-          <a href="https://linkedin.com/in/mohammedzims" target="_blank" class="clink">
+          </a><a href="https://linkedin.com/in/mohammedzims" target="_blank" class="clink">
             <div class="clink-icon"><i class="fab fa-linkedin-in"></i></div>
             <div>
               <div class="clink-lbl">LinkedIn</div>
               <div class="clink-val">linkedin.com/in/mohammedzims</div>
             </div><span class="clink-arr"><i class="fas fa-arrow-right"></i></span>
-          </a>
-          <a href="https://youtube.com/@MohammedZIMS" target="_blank" class="clink">
+          </a><a href="https://youtube.com/@MohammedZIMS" target="_blank" class="clink">
             <div class="clink-icon"><i class="fab fa-youtube"></i></div>
             <div>
               <div class="clink-lbl">YouTube</div>
               <div class="clink-val">@MohammedZIMS</div>
             </div><span class="clink-arr"><i class="fas fa-arrow-right"></i></span>
-          </a>
-          <a href="https://www.facebook.com/md.zahidul.islam.mehedi.2024" target="_blank" class="clink">
+          </a><a href="https://www.facebook.com/md.zahidul.islam.mehedi.2024" target="_blank" class="clink">
             <div class="clink-icon"><i class="fab fa-facebook-f"></i></div>
             <div>
               <div class="clink-lbl">Facebook</div>
               <div class="clink-val">md.zahidul.islam.mehedi.2024</div>
             </div><span class="clink-arr"><i class="fas fa-arrow-right"></i></span>
           </a>
-          <div class="socials">
-            <a href="https://github.com/MohammedZIMS" target="_blank" class="soc" title="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/mohammedzims" target="_blank" class="soc" title="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://youtube.com/@MohammedZIMS" target="_blank" class="soc" title="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://www.facebook.com/md.zahidul.islam.mehedi.2024" target="_blank" class="soc"
-              title="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </div>
+          <div class="socials"><a href="https://github.com/MohammedZIMS" class="soc"><i class="fab fa-github"></i></a><a
+              href="https://linkedin.com/in/mohammedzims" class="soc"><i class="fab fa-linkedin-in"></i></a><a
+              href="https://youtube.com/@MohammedZIMS" class="soc"><i class="fab fa-youtube"></i></a><a
+              href="https://www.facebook.com/md.zahidul.islam.mehedi.2024" class="soc"><i
+                class="fab fa-facebook-f"></i></a></div>
         </div>
         <div class="form-box">
           <h3>Message</h3>
-          <div class="form-group"><label>Hello,</label>
+
+          <div class="form-group">
+            <label>Hello,</label>
             <input placeholder="My name is Mehedi." readonly />
           </div>
-          <div class="form-group"><label>Open for backend roles & collaborations.</label>
+          <div class="form-group">
+            <label>Open for backend roles & collaborations.</label>
             <textarea id="fMsg"
               placeholder="I'm open to backend developer roles, AI research collaborations, and interesting freelance projects. If you have something in mind — reach out."
               readonly></textarea>
           </div>
-          <div class="form-group"><label>If you</label>
+          <div class="form-group">
+            <label>If you</label>
             <input placeholder="  would like to contact or connect with me, visit my social media accounts." readonly />
           </div>
-
-          <div class="form-submit center">
-            <a href="https://linkedin.com/in/mohammedzims" target="_blank" class="soc" title="LinkedIn">
+          <div class="form-submit">
+            <a href="https://linkedin.com/in/mohammedzims" class="soc">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://www.facebook.com/md.zahidul.islam.mehedi.2024" target="_blank" class="soc"
-              title="Facebook">
-              <i class="fab fa-facebook-f"></i>
+            <a href="https://www.facebook.com/md.zahidul.islam.mehedi.2024" class="soc"><i
+                class="fab fa-facebook-f"></i>
             </a>
-            <a href="mailto:zimss75656@gmail.com" class="soc" title="Mail">
-              <i class="fas fa-envelope"></i>
-            </a>
+            <a href="mailto:zimss75656@gmail.com" class="soc">
+              <i class="fas fa-envelope"></i></a>
           </div>
-
-          <div id="form-msg"></div>
         </div>
       </div>
     </section>
   </div>
-
+  <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
   <footer>
     <div class="footer-copy">© 2026 <span>Md. Zahidul Islam Mehedi</span></div>
-    <div class="footer-right">
-      <a href="https://github.com/MohammedZIMS" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/mohammedzims" target="_blank">LinkedIn</a>
-      <a href="https://youtube.com/@MohammedZIMS" target="_blank">YouTube</a>
+    <div class="footer-right"><a href="https://github.com/MohammedZIMS">GitHub</a><a
+        href="https://linkedin.com/in/mohammedzims">LinkedIn</a><a href="https://youtube.com/@MohammedZIMS">YouTube</a>
     </div>
   </footer>
-
   <script>
+    // Theme
     const themeBtn = document.getElementById('themeBtn');
     const body = document.body;
-
-    function applyTheme(isLight) {
-      body.classList.toggle('light', isLight);
-      themeBtn.querySelector('i').className = isLight ? 'fas fa-moon' : 'fas fa-sun';
-    }
-
-    const saved = localStorage.getItem('theme');
-    if (saved) applyTheme(saved === 'light');
-
+    function applyTheme(isLight) { body.classList.toggle('light', isLight); themeBtn.querySelector('i').className = isLight ? 'fas fa-moon' : 'fas fa-sun'; }
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) applyTheme(savedTheme === 'light');
     else applyTheme(false);
-
-    themeBtn.addEventListener('click', () => {
-      const isLight = !body.classList.contains('light');
-      applyTheme(isLight); localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
-
+    themeBtn.addEventListener('click', () => { const isLight = !body.classList.contains('light'); applyTheme(isLight); localStorage.setItem('theme', isLight ? 'light' : 'dark'); });
+    // Mobile nav
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const open = mobileNav.classList.toggle('open');
-      hamburger.querySelector('i').className = open ? 'fas fa-times' : 'fas fa-bars';
-    });
-    document.addEventListener('click', (e) => {
-      if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
-        mobileNav.classList.remove('open');
-        hamburger.querySelector('i').className = 'fas fa-bars';
-      }
-    });
-
-    function closeMobile() {
-      mobileNav.classList.remove('open');
-      hamburger.querySelector('i').className = 'fas fa-bars';
-    }
-
+    hamburger.addEventListener('click', (e) => { e.stopPropagation(); const open = mobileNav.classList.toggle('open'); hamburger.querySelector('i').className = open ? 'fas fa-times' : 'fas fa-bars'; });
+    document.addEventListener('click', (e) => { if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) { mobileNav.classList.remove('open'); hamburger.querySelector('i').className = 'fas fa-bars'; } });
+    window.closeMobile = () => { mobileNav.classList.remove('open'); hamburger.querySelector('i').className = 'fas fa-bars'; };
+    // Active nav
     const sections = document.querySelectorAll('section[id]');
-    const navAs = document.querySelectorAll('.nav-links a');
-    const navIO = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          navAs.forEach(a => a.classList.remove('active'));
-          const link = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-          if (link) link.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-
-    sections.forEach(s => navIO.observe(s));
-
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { navLinks.forEach(link => link.classList.remove('active')); const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`); if (active) active.classList.add('active'); } }); }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(s => obs.observe(s));
+    // Reveal animations
     const reveals = document.querySelectorAll('.reveal');
-    const revealIO = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('in'), i * 80);
-          revealIO.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08 });
-
-    reveals.forEach(el => revealIO.observe(el));
+    const revealObserver = new IntersectionObserver((entries) => { entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 80); revealObserver.unobserve(e.target); } }); }, { threshold: 0.08 });
+    reveals.forEach(el => revealObserver.observe(el));
+    // Avatar fallback
     const avatarImg = document.getElementById('avatarImg');
     const avatarFallback = document.getElementById('avatarFallback');
-    if (avatarImg) {
-      const handleError = () => {
-        avatarImg.style.display = 'none';
-        if (avatarFallback) avatarFallback.style.display = 'flex';
-      };
-      avatarImg.addEventListener('error', handleError);
-      if (avatarImg.complete && avatarImg.naturalWidth === 0) handleError();
-    }
-
-    function submitForm() {
-      const name = document.getElementById('fName').value.trim();
-      const email = document.getElementById('fEmail').value.trim();
-      const msg = document.getElementById('fMsg').value.trim();
-      const fb = document.getElementById('form-msg');
-      fb.style.display = 'block';
-
-      if (!name || !email || !msg) {
-        fb.className = 'err';
-        fb.textContent = '⚠ Please fill in all fields.';
-        return;
+    if (avatarImg) { avatarImg.addEventListener('error', () => { avatarImg.style.display = 'none'; if (avatarFallback) avatarFallback.style.display = 'flex'; }); if (avatarImg.complete && avatarImg.naturalWidth === 0) avatarImg.dispatchEvent(new Event('error')); }
+    // Back to top
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => { if (window.scrollY > 400) backBtn.classList.add('show'); else backBtn.classList.remove('show'); });
+    backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    // Show More Projects logic
+    const showBtn = document.getElementById('showMoreBtn');
+    const visibleSpan = document.getElementById('visibleCount');
+    const hiddenCards = document.querySelectorAll('.proj-card.hidden-proj');
+    let expanded = false;
+    function updateShowMore() {
+      if (expanded) {
+        hiddenCards.forEach(card => card.classList.add('visible'));
+        showBtn.classList.add('expanded');
+        showBtn.innerHTML = '<i class="fas fa-chevron-up btn-icon"></i> Show Less <span class="proj-count-pill">−1</span>';
+        visibleSpan.textContent = '7';
+      } else {
+        hiddenCards.forEach(card => card.classList.remove('visible'));
+        showBtn.classList.remove('expanded');
+        showBtn.innerHTML = '<i class="fas fa-chevron-down btn-icon"></i> Show More Projects <span class="proj-count-pill">+1</span>';
+        visibleSpan.textContent = '6';
       }
-      if (!email.includes('@') || !email.includes('.')) {
-        fb.className = 'err';
-        fb.textContent = '⚠ Please enter a valid email address.';
-        return;
-      }
-
-      fb.className = 'ok';
-      fb.textContent = `✓ Thanks ${name}! I'll get back to you soon.`;
-      document.getElementById('fName').value = ''; document.getElementById('fEmail').value = '';
-      document.getElementById('fMsg').value = ''; setTimeout(() => {
-        fb.style.display = 'none';
-      }, 5000);
     }
-    document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const target = document.querySelector(a.getAttribute('href')); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); } }); });
+    showBtn.addEventListener('click', () => {
+      expanded = !expanded;
+      updateShowMore();
+      if (!expanded) document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+    });
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+    // Initialize: ensure hidden cards are hidden
+    hiddenCards.forEach(c => c.classList.remove('visible'));
   </script>
 </body>
 
