@@ -1329,22 +1329,6 @@
       font-size: .8rem
     }
 
-    /* ── COPY BUTTON ON CLINKS ── */
-    .clink-copy {
-      background: none;
-      border: none;
-      color: var(--text-dim);
-      cursor: pointer;
-      padding: .2rem .4rem;
-      border-radius: 4px;
-      font-size: .75rem;
-      margin-left: .4rem;
-      transition: color .2s;
-    }
-
-    .clink-copy:hover {
-      color: var(--accent)
-    }
 
     .socials {
       display: flex;
@@ -1656,6 +1640,7 @@
       z-index: 99;
     }
 
+    /* toggle button */
     #float-toggle {
       width: 44px;
       height: 44px;
@@ -1668,15 +1653,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 16px rgba(108, 99, 255, .4);
-      transition: all .2s;
+      box-shadow: 0 4px 16px rgba(108, 99, 255, 0.4);
+      transition: all 0.2s;
       z-index: 100;
+      position: relative;
     }
 
     #float-toggle:hover {
-      filter: brightness(1.15)
+      filter: brightness(1.15);
+      transform: scale(1.02);
     }
 
+    /* floating menu container */
     #float-menu {
       position: fixed;
       bottom: 140px;
@@ -1684,18 +1672,96 @@
       z-index: 98;
       display: flex;
       flex-direction: column;
-      gap: .5rem;
+      gap: 0.5rem;
       align-items: flex-end;
       opacity: 0;
       pointer-events: none;
-      transition: opacity .25s, transform .25s;
+      transition: opacity 0.25s, transform 0.25s;
       transform: translateY(10px);
     }
 
     #float-menu.open {
       opacity: 1;
       pointer-events: all;
-      transform: translateY(0)
+      transform: translateY(0);
+    }
+
+    /* each menu row (button + label) */
+    .float-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.2s;
+    }
+
+    .float-wrap:hover {
+      transform: translateX(-5px);
+    }
+
+    /* round action buttons */
+    .float-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: #1e1e2f;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .float-btn:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    /* individual brand colors on hover */
+    .float-btn.email:hover {
+      background: #D44638;
+    }
+
+    .float-btn.facebook:hover {
+      background: #1877f2;
+    }
+
+    .float-btn.linkedin:hover {
+      background: #0a66c2;
+    }
+
+    .float-btn.github:hover {
+      background: #333;
+    }
+
+    /* label that appears on the left */
+    .float-label {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-family: system-ui, 'Segoe UI', sans-serif;
+      color: white;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+
+    .float-wrap:hover .float-label {
+      opacity: 1;
+    }
+
+    /* optional: wrapper for toggle button (keep its position) */
+    #float-toggle-wrap {
+      position: fixed;
+      bottom: 80px;
+      right: 30px;
+      z-index: 100;
     }
 
     @media(max-width:860px) {
@@ -1896,16 +1962,14 @@
               <span class="info-k">Email</span>
               <span class="info-v" style="display:flex;align-items:center;gap:.3rem;">
                 zimss75656@gmail.com
-                <button class="clink-copy" data-copy="zimss75656@gmail.com" title="Copy email"><i
-                    class="fas fa-copy"></i></button>
+                <!-- <button class="clink-copy" data-copy="zimss75656@gmail.com" title="Copy email"></button> -->
               </span>
             </div>
             <div class="info-row">
               <span class="info-k">Phone</span>
               <span class="info-v" style="display:flex;align-items:center;gap:.3rem;">
                 +880 1533-778364
-                <button class="clink-copy" data-copy="+8801533778364" title="Copy phone"><i
-                    class="fas fa-copy"></i></button>
+                <!-- <button class="clink-copy" data-copy="+8801533778364" title="Copy phone"></button> -->
               </span>
             </div>
             <div class="info-row"><span class="info-k">Languages</span><span class="info-v">Bangla · English
@@ -2080,12 +2144,30 @@
                   class="fa-regular fa-file-lines"></i> Paper in Progress</span></div>
           </div>
         </div>
+
+        <div class="proj-card reveal hidden-proj" data-category="ai">
+          <div class="proj-thumb-placeholder" style="background:linear-gradient(135deg,#0d1a10,#0a1a16)"><i
+              class="fas fa-seedling" style="color:#00e5a0"></i></div>
+          <div class="proj-body">
+            <div class="res-badge"><i class="fas fa-flask"></i> Research</div>
+            <div class="proj-type research">Agricultural AI · Benchmark Study</div>
+            <div class="proj-name">Deep Transfer Learning for Multi-Class Potato Leaf Disease Classification</div>
+            <div class="proj-accuracy">91.01%</div>
+            <div class="proj-desc">Benchmark comparing EfficientNetB2, EfficientNetB0, MobileNetV3-Large,
+              DenseNet121, CNN and ResNet50
+              for agricultural pest detection.</div>
+            <div class="proj-tags"><span class="tag tag-orange">ResNet50</span><span
+                class="tag tag-blue">DenseNet121</span><span class="tag tag-cyan">MobileNetV3-Large</span></div>
+            <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i
+                  class="fa-regular fa-file-lines"></i> Paper in Progress</span></div>
+          </div>
+        </div>
       </div>
 
       <div class="show-more-wrap" id="showMoreWrap">
-        <div class="show-more-hint">Showing <span id="visibleCount">6</span> of 7 projects</div>
+        <div class="show-more-hint">Showing <span id="visibleCount">6</span> of 8 projects</div>
         <button class="show-more-btn" id="showMoreBtn"><i class="fas fa-chevron-down btn-icon"></i> Show More Projects
-          <span class="proj-count-pill">+1</span></button>
+          <span class="proj-count-pill">+2</span></button>
       </div>
     </section>
 
@@ -2298,11 +2380,11 @@
           <div class="form-group">
             <label>Open for backend roles & collaborations.</label>
             <textarea
-              readonly>I'm open to backend developer roles, AI research collaborations, and interesting freelance projects. If you have something in mind — reach out.</textarea>
+              placeholder="I'm open to backend developer roles, AI research collaborations, and interesting freelance projects. If you have something in mind — reach out."></textarea>
           </div>
           <div class="form-group">
             <label>If you</label>
-            <input placeholder="  would like to contact or connect with me, visit my social media accounts." readonly />
+            <input placeholder=" you would like to contact or connect with me, visit my social media accounts." readonly />
           </div>
           <div class="form-submit">
             <a href="https://linkedin.com/in/mohammedzims" class="soc"><i class="fab fa-linkedin-in"></i></a>
@@ -2315,7 +2397,7 @@
     </section>
   </div>
 
-  <!-- Floating Quick-Contact -->
+  <!-- Floating toggle + menu -->
   <div id="float-toggle-wrap">
     <button id="float-toggle" title="Quick contact"><i class="fas fa-comment-dots"></i></button>
   </div>
@@ -2326,9 +2408,9 @@
       <span class="float-label">Email me</span>
     </div>
     <div class="float-wrap">
-      <button class="float-btn facebook"
-        onclick="window.open('https://www.facebook.com/md.zahidul.islam.mehedi.2024','_blank')" title="Facebook"><i
-          class="fab fa-facebook-f"></i></button>
+      <!-- FIXED: better Facebook link – replace with your real profile -->
+      <button class="float-btn facebook" onclick="window.open('https://www.facebook.com/yourusername','_blank')"
+        title="Facebook"><i class="fab fa-facebook-f"></i></button>
       <span class="float-label">Facebook</span>
     </div>
     <div class="float-wrap">
@@ -2582,8 +2664,8 @@
     const hiddenCards = document.querySelectorAll('.proj-card.hidden-proj');
     let expanded = false;
     function updateShowMore() {
-      if (expanded) { hiddenCards.forEach(c => c.classList.add('visible')); showBtn.classList.add('expanded'); showBtn.innerHTML = '<i class="fas fa-chevron-up btn-icon"></i> Show Less <span class="proj-count-pill">−1</span>'; visibleSpan.textContent = '7'; }
-      else { hiddenCards.forEach(c => c.classList.remove('visible')); showBtn.classList.remove('expanded'); showBtn.innerHTML = '<i class="fas fa-chevron-down btn-icon"></i> Show More Projects <span class="proj-count-pill">+1</span>'; visibleSpan.textContent = '6'; }
+      if (expanded) { hiddenCards.forEach(c => c.classList.add('visible')); showBtn.classList.add('expanded'); showBtn.innerHTML = '<i class="fas fa-chevron-up btn-icon"></i> Show Less <span class="proj-count-pill">−2</span>'; visibleSpan.textContent = '8'; }
+      else { hiddenCards.forEach(c => c.classList.remove('visible')); showBtn.classList.remove('expanded'); showBtn.innerHTML = '<i class="fas fa-chevron-down btn-icon"></i> Show More Projects <span class="proj-count-pill">+2</span>'; visibleSpan.textContent = '6'; }
     }
     showBtn.addEventListener('click', () => { expanded = !expanded; updateShowMore(); if (!expanded) document.getElementById('projects').scrollIntoView({ behavior: 'smooth' }); });
     hiddenCards.forEach(c => c.classList.remove('visible'));
