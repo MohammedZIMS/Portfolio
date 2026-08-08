@@ -1,88 +1,145 @@
-# Md. Zahidul Islam Mehedi | Backend Developer & AI Researcher Portfolio
+# Md. Zahidul Islam Mehedi — Portfolio Website
 
-A modern, responsive portfolio website showcasing my work as a backend developer and AI researcher. Built with a focus on clean design, dark/light themes, interactive elements, and seamless user experience.
+A single-page, animated, responsive personal portfolio for a Backend Developer & AI Researcher. Built with plain HTML5, CSS3, and vanilla JavaScript — no build tools, no framework, no backend.
 
+## File Structure
 
-## ✨ Features
-
-- **Fully Responsive** – Works on desktop, tablet, and mobile.
-- **Dark / Light Theme** – User-preference persisted in localStorage.
-- **Smooth Scrolling** & **Active Navigation Highlight**.
-- **Animated Avatar** – Rotating gradient rings and hover scale effect.
-- **Scroll-Reveal Animations** – Sections fade in as you scroll.
-- **Working Contact Form** – Client-side validation with success feedback.
-- **Projects Showcase** – Cards with GitHub, YouTube, and document links.
-- **Skills Grid** – Categorized tags with hover effects.
-- **Education & Credentials** – Panel layout with badges.
-<!-- - **Back to Top Button** – Appears after scrolling. -->
-- **No External Dependencies** – Pure HTML/CSS/JS, only Font Awesome and Google Fonts.
-
-## 🛠️ Tech Stack
-
-- **HTML5** – Semantic structure.
-- **CSS3** – Custom properties (theming), CSS Grid, Flexbox, animations.
-- **JavaScript (ES6+)** – Theme toggling, scroll events, form handling, intersection observers.
-- **Font Awesome 6** – Icons.
-- **Google Fonts** – Outfit (sans‑serif) and JetBrains Mono (monospace).
-
-## 📁 File Structure
-```bash
-portfolio/
-├── index.html # Main portfolio file
-├── assets/
-│ ├── image/ # Profile picture, project thumbnails (LMS, EBMS, Rover)
-│ │ └── MyImage1.png
-│ └── file/ # Resume PDF (My_Resume.pdf) and project documents
-├── README.md
-└── (any other assets)
+```
+portfolio-site/
+├── index.html          # Markup + <head> SEO/social metadata
+├── style.css            # All styles (dark/light theme via CSS variables)
+├── script.js             # All behavior (theme, nav, animations, filters, contact form)
+├── README.md             # This file
+└── assets/
+    └── image/            # Place project thumbnails, avatar photo, and og-preview.png here
 ```
 
+## Sections
 
-> **Note:** Replace the image and PDF paths with your own files. The code includes fallback placeholders if images are missing.
+- **Hero** — animated typewriter intro, avatar with rotating gradient rings, animated stat counters
+- **About** — professional summary, stat grid, personal info panel with live Bangladesh time
+- **Projects** — filterable grid (All / Backend / AI-Research / Hardware / Graphics) with show more/less
+- **Skills** — categorized tag grid
+- **Education / Credentials** — academic history, certifications, strengths, languages, volunteer work
+- **Contact** — direct contact links, functional message form (see setup below), floating quick-contact menu
 
-## 🚀 How to Use
+## Running Locally
 
-1. **Clone or download** the repository.
-2. Open `index.html` in your browser – no build step required.
-3. Customise content:
-   - Update personal info in the HTML (name, email, links).
-   - Replace `./assets/image/MyImage1.png` with your own photo.
-   - Update project thumbnails and resume PDF paths.
-   - Modify colours in `:root` CSS variables if needed.
+No build step required. Either:
 
-## 🔧 Customisation Tips
+1. Open `index.html` directly in a browser, **or**
+2. Serve it locally to avoid any `file://` restrictions some browsers apply to relative asset paths:
+   ```bash
+   npx serve .
+   # or
+   python3 -m http.server 8080
+   ```
 
-- **Theme Variables** – Edit `:root` (dark) and `body.light` (light) in `<style>` to change accent colours, backgrounds, etc.
-- **Add/Remove Projects** – Copy a `.proj-card` block inside `.projects-grid`.
-- **Social Links** – Update `href` attributes in the footer and contact section.
-- **Resume Link** – Point `./assets/file/My_Resume.pdf` to your actual file.
+## Deployment
 
-## 📱 Responsive Breakpoints
+Static hosting only — no server/database needed. Works as-is on:
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static file host
 
-- **≤ 860px** – Stack hero columns, hide desktop nav, show hamburger menu.
-- **≤ 560px** – Reduce font sizes and single‑column project grid.
+Just upload the four files above plus the `assets/` folder.
 
-## 🌐 Deployment
+## Required Manual Setup
 
-You can host this portfolio on any static hosting service:
+### 1. Contact form (Formspree)
 
-- **GitHub Pages** – Push to a repository, enable Pages.
-- **Netlify / Vercel** – Drag & drop the folder.
-- **Cloudflare Pages** – Direct upload.
+The message form in the Contact section posts to Formspree, a hosted form backend — keeping the site fully static with no server code.
 
-No server‑side requirements – it's fully static.
+1. Create a free account at [formspree.io](https://formspree.io).
+2. Create a new form; Formspree will give you a form ID like `xxxxxxxx`.
+3. Confirm the form's notification email is set to `zimss75656@gmail.com`.
+4. Open `script.js`, find this line near the top of the `/* ── CONTACT FORM ── */` block:
+   ```javascript
+   const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+   ```
+   Replace `YOUR_FORM_ID` with your real Formspree endpoint. Until this is set, the form will show an error toast on submit instead of failing silently.
+5. Free tier covers 50 submissions/month with basic spam filtering. A hidden honeypot field (`_gotcha`) in the form adds a second layer of bot protection.
 
-## 📄 License
+### 2. Open Graph / social preview image
 
-This project is open‑source and available under the **MIT License**. Feel free to use it as a template for your own portfolio.
+`index.html` references `./assets/image/og-preview.png` for link previews (Facebook, LinkedIn, Twitter/X, etc.), sized **1200×630px**. This file needs to be created manually — a clean screenshot or composition of the hero section on dark theme is recommended. Until it's added, social shares will show a broken image rather than a preview.
 
-## 📬 Contact
+### 3. Domain placeholders
 
-Md. Zahidul Islam Mehedi  
-- Email: zimss75656@gmail.com  
-- GitHub: [MohammedZIMS](https://github.com/MohammedZIMS)  
-- LinkedIn: [mohammedzims](https://linkedin.com/in/mohammedzims)
+`index.html` has three placeholder URLs that should be updated once the site is deployed to a real domain:
+- `<link rel="canonical" href="https://YOUR-DOMAIN-HERE.com/">`
+- `<meta property="og:url" content="https://YOUR-DOMAIN-HERE.com/">`
+- The `"url"` field inside the JSON-LD `<script type="application/ld+json">` block
+
+### 4. Project/avatar images
+
+Place the following in `assets/image/` (referenced throughout `index.html`, with graceful fallback icons if missing):
+- `mypic.png` — favicon
+- `mypic1.png` — hero avatar photo
+- `YoutubeVideoThumbnail_LMS.webp`, `YoutubeVideoThumbnail_CDDS.png`, `YoutubeVideoThumbnail_EBMS.webp`, `YoutubeVideoThumbnail_RMRA(Rover).jpg`, `Employee Management System Civic Tech (Narayanganj City).png` — project thumbnails
+- `og-preview.png` — social share image (see above)
+
+### 5. Floating menu Facebook link
+
+In `index.html`, the floating quick-contact menu's Facebook button currently points to a placeholder:
+```html
+onclick="window.open('https://www.facebook.com/yourusername','_blank')"
+```
+Update this to the real profile URL (`https://www.facebook.com/md.zahidul.islam.mehedi.2024`, matching the one already used elsewhere on the page) — this was flagged in the source as a known placeholder, left as-is here since replacing it wasn't part of the completed task list.
+
+## Changes Applied in This Build
+
+This version consolidates five completed maintenance passes:
+
+| # | Change | Summary |
+|---|---|---|
+| 1 | **Deduplicated JS & CSS** | Removed a legacy `updateShowMore()` block that was double-firing on every Show More click and silently overwriting correct filtered counts with hardcoded values. Removed a dead `#float-contact` CSS block that referenced a non-existent element and was fully shadowed by the active floating-menu styles. |
+| 2 | **Functional contact form** | Replaced the read-only display fields with a real Name/Email/Message form, wired to Formspree (see setup above), with client-side validation, a honeypot anti-spam field, and toast success/error feedback. |
+| 3 | **SEO & social metadata** | Added `<meta name="description">`, canonical link, Open Graph tags, Twitter Card tags, and a JSON-LD `Person` structured-data block to `<head>`. |
+| 4 | **Accessibility pass** | Added visible `:focus-visible` outlines on all interactive elements; `aria-label`/`aria-expanded`/`aria-controls` on icon-only buttons (theme toggle, hamburger, back-to-top, floating menu); `aria-hidden="true"` on decorative layers (`#cursor-glow`, `#particles-canvas`). |
+| 5 | **Hardened external links** | Added `rel="noopener noreferrer"` to all 20 anchors using `target="_blank"`, across Hero, Projects, Contact, and the contact-form's alt-contact row. |
+| 6 | **3D hero scene (Three.js)** | Added a `#hero3d` canvas orbiting the avatar: two nested wireframe icosahedra (colored from the existing `--accent`/`--cyan` tokens) plus a sparse particle shell, with subtle mouse-parallax rotation. Loaded via CDN (`unpkg.com/three@0.128.0`) — no build step. Colors re-sync automatically on theme toggle, rendering pauses when the hero scrolls out of view, and the whole feature no-ops silently if the CDN fails to load or `prefers-reduced-motion` is set. |
+
+### Known open item
+
+A contrast audit during the accessibility pass found `--text-dim` fails WCAG AA's 4.5:1 body-text threshold against both `--bg` and `--bg2`, in both themes (as low as 2.96:1 in dark mode). A fix was proposed but not applied, since it's a visual color change outside that task's stated scope:
+
+| Theme | Current `--text-dim` | Proposed | New ratio (vs. `--bg2`) |
+|---|---|---|---|
+| Dark | `#5a5a8a` | `#8686b4` | 5.51:1 ✅ |
+| Light | `#8888aa` | `#666690` | 4.93:1 ✅ |
+
+To apply, update the two `--text-dim` values in the `:root` and `body.light` blocks in `style.css`.
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Markup | HTML5 |
+| Styling | CSS3 (custom properties, Grid, Flexbox, keyframe animations) |
+| Behavior | Vanilla JavaScript (ES6+) |
+| Icons | Font Awesome 6.5.0 (CDN) |
+| Fonts | Google Fonts — Outfit, JetBrains Mono (CDN) |
+| 3D | Three.js r128 (CDN, `unpkg.com/three@0.128.0`) — hero avatar wireframe scene only |
+| Form backend | Formspree (no server code required) |
+| Storage | Browser `localStorage` (theme preference only) |
+
+## Design Tokens (for reference)
+
+```css
+:root {
+  --bg: #09090f; --bg2: #0f0f1a; --bg3: #141424;
+  --surface: #17172a; --border: #222240; --border2: #2d2d55;
+  --accent: #6c63ff; --cyan: #00d4ff; --green: #00e5a0; --orange: #ff7b5a;
+  --text: #c8c8e8; --text-dim: #5a5a8a; --text-bright: #eeeeff;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Outfit', sans-serif;
+}
+```
+
+Full color, typography, layout, and motion guidelines are documented separately in the project's design specification.
 
 ---
 
-*Built with 💻 and ☕ by Md. Zahidul Islam Mehedi.*
+© 2026 Md. Zahidul Islam Mehedi
