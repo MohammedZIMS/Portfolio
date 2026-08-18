@@ -12,7 +12,6 @@
   <meta name="author" content="Md. Zahidul Islam Mehedi">
 
   <!-- ── CANONICAL ── -->
-  <!-- TODO: replace with the real deployed domain once live -->
   <link rel="canonical" href="https://mohammedzims.github.io/portfolio/">
 
   <!-- ── OPEN GRAPH ── -->
@@ -29,42 +28,40 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Md. Zahidul Islam Mehedi | Backend Developer & AI Researcher">
   <meta name="twitter:description" content="Backend Developer & AI Researcher building scalable APIs with Node.js, Express, React & MongoDB/PostgreSQL, plus deep learning research reaching 99.59% seed classification accuracy.">
-  <meta name="twitter:image" content="./assets/image/og-preview.png">
+  <meta name="twitter:image" content="./assets/image//MyImage2">
 
   <!-- ── STRUCTURED DATA (Person) ── -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Md. Zahidul Islam Mehedi",
-    "jobTitle": "Backend Developer & AI Researcher",
-    "url": "https://mohammedzims.github.io/portfolio/",
-    "image": "./assets/image/og-preview.png",
-    "email": "mailto:zimss75656@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Narayanganj",
-      "addressRegion": "Dhaka",
-      "addressCountry": "BD"
-    },
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "R.P. Shaha University"
-    },
-    "knowsAbout": ["Node.js", "Express", "React", "MongoDB", "PostgreSQL", "Deep Learning", "Transfer Learning", "TensorFlow"],
-    "sameAs": [
-      "https://github.com/MohammedZIMS",
-      "https://linkedin.com/in/mohammedzims",
-      "https://youtube.com/@MohammedZIMS",
-      "https://www.facebook.com/md.zahidul.islam.mehedi.2024"
-    ]
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Md. Zahidul Islam Mehedi",
+      "jobTitle": "Backend Developer & AI Researcher",
+      "url": "https://mohammedzims.github.io/portfolio/",
+      "image": "./assets/image//MyImage2",
+      "email": "mailto:zimss75656@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Narayanganj",
+        "addressRegion": "Dhaka",
+        "addressCountry": "BD"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "R.P. Shaha University"
+      },
+      "knowsAbout": ["Node.js", "Express", "React", "MongoDB", "PostgreSQL", "Deep Learning", "Transfer Learning", "TensorFlow"],
+      "sameAs": [
+        "https://github.com/MohammedZIMS",
+        "https://linkedin.com/in/mohammedzims",
+        "https://youtube.com/@MohammedZIMS",
+        "https://www.facebook.com/md.zahidul.islam.mehedi.2024"
+      ]
+    }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -75,8 +72,9 @@
   <!-- Scroll progress -->
   <div id="scroll-progress"></div>
   <!-- Particles -->
-  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+  <!-- <canvas id="particles-canvas" aria-hidden="true"></canvas> -->
 
+  <!-- ─── NAVBAR ─── -->
   <nav class="navbar">
     <div class="nav-inner">
       <div class="nav-logo"><span>Mohammed</span>ZIMS</div>
@@ -94,6 +92,8 @@
       </div>
     </div>
   </nav>
+
+  <!-- ─── MOBILE NAV ─── -->
   <div class="mobile-nav" id="mobileNav">
     <a href="#home" onclick="closeMobile()">Home</a>
     <a href="#about" onclick="closeMobile()">About</a>
@@ -103,22 +103,22 @@
     <a href="#contact" onclick="closeMobile()">Contact</a>
   </div>
 
+  <!-- ─── WRAPPER ─── -->
   <div class="wrapper">
-    <!-- ── HERO ── -->
+
+    <!-- ═══ HERO ═══ -->
     <section id="home">
       <div class="hero-grid">
         <div>
-          <div class="hero-eyebrow h-anim">Software Engineer · AI Researcher</div>
-          <div class="hero-name h-anim">Md. Zahidul Islam <span class="grad">Mehedi</span></div>
-          <div class="hero-sub h-anim">
-            I am <span id="tw1" style="color: var(--accent);"></span><span id="cur1" class="typewriter">|</span><br>
-            Building <span id="tw2" style="color: var(--green);"></span><span id="cur2" class="typewriter">|</span>
-          </div>
+          <div class="hero-eyebrow h-anim"><span class="dot"></span>Software Engineer · AI Researcher</div>
+          <h1 class="hero-name h-anim">Md. Zahidul Islam Mehedi</h1>
+          <p class="hero-sub h-anim">I'm a <span class="role" id="roleWord">CSE Student.</span><span
+              class="cur"></span><br>Building scalable APIs, intelligent systems, and interfaces people enjoy using.</p>
           <div class="hero-cta h-anim">
-            <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Projects</a>
-            <a href="#contact" class="btn btn-ghost"><i class="fas fa-paper-plane"></i> Hire Me</a>
-            <a href="https://drive.google.com/file/d/1RxSkWW4egM1y5JLuJw7a3Dk1t1HfWl3P/view?usp=sharing" target="_blank" rel="noopener noreferrer"
-              class="btn btn-ghost"><i class="fas fa-file-pdf"></i> Resume</a>
+            <a href="#projects" class="btn btn-outline"><i class="fas fa-folder-open"></i> View Projects</a>
+            <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire Me</a>
+            <a href="./assets/file/My_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i
+                class="fas fa-file-pdf"></i> Resume</a>
           </div>
           <div class="hero-stats h-anim">
             <div class="stat-chip"><span class="stat-chip-num" data-target="99.59" data-suffix="%">0%</span><span
@@ -131,41 +131,36 @@
                 class="stat-chip-lbl">Languages</span></div>
           </div>
         </div>
-        <div class="hero-avatar-col">
-          <div class="avatar-wrap">
-            <canvas id="hero3d" class="hero3d-canvas" aria-hidden="true"></canvas>
-            <div class="avatar-ring"></div>
-            <div class="avatar-ring-revars"></div>
-            <div class="avatar-inner">
-              <img src="./assets/image/mypic1.png" alt="Mehedi" id="avatarImg"
+        <div class="hero-photo-col">
+          <div class="photo-panel">
+            <div class="photo-panel-bg" aria-hidden="true"></div>
+            <div class="photo-panel-photo">
+              <img src="./assets/image/mypic1.png" alt="Md. Zahidul Islam Mehedi" id="avatarImg"
                 onerror="this.style.display='none';document.getElementById('avatarFallback').style.display='flex'">
               <div class="avatar-fallback" id="avatarFallback"><i class="fas fa-user-astronaut"></i></div>
             </div>
-            <div class="avatar-badge">Available</div>
+            <div class="photo-badge"><span class="dot"></span>Available for work</div>
           </div>
         </div>
       </div>
-      <div class="scroll-hint">
-        <div class="scroll-line"></div>scroll to explore
-      </div>
+      
     </section>
 
     <div class="section-divider"></div>
 
-    <!-- ── ABOUT ── -->
+    <!-- ═══ ABOUT ═══ -->
     <section id="about" class="section">
       <div class="sec-eyebrow">About Me</div>
       <div class="sec-title">Who I am &amp; what I build.</div>
+
       <div class="about-grid reveal">
+
+        <!-- ── Left column: text + stats ── -->
         <div>
           <div class="about-text">
-            <p>I'm a final-year <b>Computer Science student at R.P. Shaha University</b> with deep hands-on experience
-              building production-grade backend systems and AI-powered solutions.</p>
-            <p>My backend expertise covers <b>REST API design, authentication, payment integrations</b>, and database
-              architecture — delivered with Node.js, Express, and MongoDB/PostgreSQL.</p>
-            <p>On the research front, I apply <b>deep learning and transfer learning</b> to real-world agricultural
-              problems — achieving 99.59% accuracy in seed classification and 86.49% in multi-model insect pest
-              detection benchmarks.</p>
+            <p>I'm a final-year <b>Computer Science student at R.P. Shaha University</b> with deep hands-on experience building production-grade backend systems and AI-powered solutions.</p>
+            <p>My backend expertise covers <b>REST API design, authentication, payment integrations</b>, and database architecture — delivered with Node.js, Express, and MongoDB/PostgreSQL.</p>
+            <p>On the research front, I apply <b>deep learning and transfer learning</b> to real-world agricultural problems — achieving 99.59% accuracy in seed classification and 86.49% in multi-model insect pest detection benchmarks.</p>
             <p>I believe great software is intentional: <b>readable, scalable, and built to last</b>.</p>
           </div>
           <div class="about-stats">
@@ -188,33 +183,32 @@
           </div>
         </div>
 
+        <!-- ── Right column: image + info panel ── -->
         <div>
-          <div class="info-panel">
+          <img src="./assets/image/MyImage2.png" alt="Mehedi" class="avatar-img" style="width:100%;border-radius:var(--radius) var(--radius) 0 0;border:1px solid var(--border);border-bottom:none;">
+
+          <div class="info-panel" style="border-top:none;border-radius:0 0 var(--radius) var(--radius);">
             <div class="info-panel-head"><i class="fas fa-id-card"></i> Personal Info</div>
-            <div class="info-row"><span class="info-k">Location</span><span class="info-v">Narayanganj, Dhaka, BD</span>
-            </div>
+            <div class="info-row"><span class="info-k">Location</span><span class="info-v">Narayanganj, Dhaka, BD</span></div>
             <div class="info-row">
               <span class="info-k">Email</span>
-              <span class="info-v" style="display:flex;align-items:center;gap:.3rem;">
-                zimss75656@gmail.com
-              </span>
+              <span class="info-v">zimss75656@gmail.com</span>
             </div>
-            <div class="info-row"><span class="info-k">Languages</span><span class="info-v">Bangla · English
-                (Pro)</span></div>
-            <div class="info-row"><span class="info-k">Status</span><span class="info-v avail">Open to
-                Opportunities</span></div>
+            <div class="info-row"><span class="info-k">Languages</span><span class="info-v">Bangla · English (Pro)</span></div>
+            <div class="info-row"><span class="info-k">Status</span><span class="info-v avail">Open to Opportunities</span></div>
             <div class="clock-row">
               <span class="clock-label"><i class="fas fa-clock"></i> BD Time</span>
               <span id="bd-clock">--:--:--</span>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
     <div class="section-divider"></div>
 
-    <!-- ── PROJECTS ── -->
+    <!-- ═══ PROJECTS ═══ -->
     <section id="projects" class="section">
       <div class="sec-eyebrow">Work</div>
       <div class="sec-title">Projects that ship and scale.</div>
@@ -229,6 +223,8 @@
       </div>
 
       <div class="projects-grid" id="projectsGrid">
+
+        <!-- 1. LMS -->
         <div class="proj-card reveal" data-category="backend">
           <img class="proj-thumb" src="./assets/image/YoutubeVideoThumbnail_LMS.webp" alt="LMS"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -236,67 +232,69 @@
           <div class="proj-body">
             <div class="proj-type">Full-Stack Web App</div>
             <div class="proj-name">Learning Management System</div>
-            <div class="proj-desc">Production e-learning platform. Instructors create courses; students enroll, watch
-              lectures, track progress, and pay securely via Stripe.</div>
-            <div class="proj-tags"><span class="tag tag-cyan">React</span><span class="tag tag-blue">Redux
-                Toolkit</span><span class="tag tag-green">Node.js</span><span class="tag tag-green">Express</span><span
-                class="tag tag-blue">MongoDB</span><span class="tag tag-orange">Stripe</span></div>
+            <div class="proj-desc">Production e-learning platform. Instructors create courses; students enroll, watch lectures, track progress, and pay securely via Stripe.</div>
+            <div class="proj-tags">
+              <span class="tag tag-cyan">React</span>
+              <span class="tag tag-purple">Redux Toolkit</span>
+              <span class="tag tag-green">Node.js</span>
+              <span class="tag tag-green">Express</span>
+              <span class="tag tag-purple">MongoDB</span>
+              <span class="tag tag-orange">Stripe</span>
+            </div>
             <div class="proj-links">
-              <a href="https://github.com/MohammedZIMS/Learning-Management-System" target="_blank" rel="noopener noreferrer" class="proj-link"><i
-                  class="fab fa-github"></i> GitHub</a>
-              <a href="https://youtu.be/Jdd8lAhho8Q" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-youtube"></i>
-                Demo</a>
-              <a href="https://drive.google.com/file/d/1QYyMCmBsdAIDUmh2F26VdlEOKGGjNizW/view" target="_blank" rel="noopener noreferrer"
-                class="proj-link"><i class="fa-regular fa-file-lines"></i> Document</a>
+              <a href="https://github.com/MohammedZIMS/Learning-Management-System" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://youtu.be/Jdd8lAhho8Q" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-youtube"></i> Demo</a>
+              <a href="https://drive.google.com/file/d/1QYyMCmBsdAIDUmh2F26VdlEOKGGjNizW/view" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-regular fa-file-lines"></i> Document</a>
             </div>
           </div>
         </div>
 
+        <!-- 2. Cyberpunk Drone -->
         <div class="proj-card reveal" data-category="graphics">
           <img class="proj-thumb" src="./assets/image/YoutubeVideoThumbnail_CDDS.png" alt="Cyberpunk Drone"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="proj-thumb-placeholder"
-            style="display:none;background:radial-gradient(circle at 30% 20%,#0f1722,#020617);flex-direction:column;">
-            <i class="fas fa-gamepad" style="font-size:3rem;color:var(--cyan)"></i><span
-              style="font-size:.7rem;font-family:var(--mono)">CYBERPUNK DRONE</span>
+          <div class="proj-thumb-placeholder" style="display:none;background:radial-gradient(circle at 30% 20%,#0f1722,#020617);flex-direction:column;">
+            <i class="fas fa-gamepad" style="font-size:3rem;color:var(--cyan)"></i>
+            <span style="font-size:.7rem;font-family:var(--mono)">CYBERPUNK DRONE</span>
           </div>
           <div class="proj-body">
             <div class="proj-type">Computer Graphics · 3D Game</div>
             <div class="proj-name">Cyberpunk Drone Delivery Simulator</div>
-            <div class="proj-desc">3D drone delivery simulation in a futuristic cyberpunk city — rendering, real-time
-              collision detection, lighting, and interactive UI built with Three.js.</div>
-            <div class="proj-tags"><span class="tag tag-green">JavaScript</span><span
-                class="tag tag-green">Three.js</span><span class="tag tag-blue">WebGL</span><span
-                class="tag tag-cyan">HTML5</span></div>
+            <div class="proj-desc">3D drone delivery simulation in a futuristic cyberpunk city — rendering, real-time collision detection, lighting, and interactive UI built with Three.js.</div>
+            <div class="proj-tags">
+              <span class="tag tag-green">JavaScript</span>
+              <span class="tag tag-green">Three.js</span>
+              <span class="tag tag-purple">WebGL</span>
+              <span class="tag tag-cyan">HTML5</span>
+            </div>
             <div class="proj-links">
-              <a href="https://github.com/MohammedZIMS/Cyberpunk_Drone_Delivery" target="_blank" rel="noopener noreferrer" class="proj-link"><i
-                  class="fab fa-github"></i> GitHub</a>
-              <a href="https://youtu.be/AGUPBhqnblI" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-youtube"></i>
-                Demo</a>
-              <a href="https://mohammedzims.github.io/Cyberpunk_Drone_Delivery/" target="_blank" rel="noopener noreferrer" class="proj-link"><i
-                  class="fas fa-play"></i> Game</a>
-              <a href="https://drive.google.com/file/d/1CawgtmXQLWwD0eGrI9rGzYfcpmQoD4-V/view?usp=sharing"
-                target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-regular fa-file-lines"></i> Document</a>
+              <a href="https://github.com/MohammedZIMS/Cyberpunk_Drone_Delivery" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://youtu.be/AGUPBhqnblI" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-youtube"></i> Demo</a>
+              <a href="https://mohammedzims.github.io/Cyberpunk_Drone_Delivery/" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fas fa-play"></i> Game</a>
+              <a href="https://drive.google.com/file/d/1CawgtmXQLWwD0eGrI9rGzYfcpmQoD4-V/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-regular fa-file-lines"></i> Document</a>
             </div>
           </div>
         </div>
 
+        <!-- 3. Employee Management -->
         <div class="proj-card reveal" data-category="backend">
           <img class="proj-thumb" src="./assets/image/Employee Management System Civic Tech (Narayanganj City).png" alt="Employee Management System"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="proj-body">
             <div class="proj-type">Enterprise System</div>
             <div class="proj-name">Employee Management Application System</div>
-            <div class="proj-desc">Centralized internal system to digitize government workflows, manage records, and
-              improve collaboration across departments.</div>
-            <div class="proj-tags"><span class="tag tag-green">Node.js</span><span
-                class="tag tag-green">Express</span><span class="tag tag-blue">MongoDB</span><span
-                class="tag tag-cyan">React</span></div>
-            <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i
-                  class="fa-solid fa-lock"></i> Private Repo</span></div>
+            <div class="proj-desc">Centralized internal system to digitize government workflows, manage records, and improve collaboration across departments.</div>
+            <div class="proj-tags">
+              <span class="tag tag-green">Node.js</span>
+              <span class="tag tag-green">Express</span>
+              <span class="tag tag-purple">MongoDB</span>
+              <span class="tag tag-cyan">React</span>
+            </div>
+            <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i class="fa-solid fa-lock"></i> Private Repo</span></div>
           </div>
         </div>
 
+        <!-- 4. Electricity Billing -->
         <div class="proj-card reveal" data-category="backend">
           <img class="proj-thumb" src="./assets/image/YoutubeVideoThumbnail_EBMS.webp" alt="EBMS"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -304,21 +302,21 @@
           <div class="proj-body">
             <div class="proj-type">Desktop Application</div>
             <div class="proj-name">Electricity Billing System</div>
-            <div class="proj-desc">Desktop app for electricity billing — bill calculation, customer management, and
-              payment tracking.</div>
-            <div class="proj-tags"><span class="tag tag-orange">Java</span><span class="tag tag-blue">SQL</span><span
-                class="tag tag-green">OOP</span></div>
+            <div class="proj-desc">Desktop app for electricity billing — bill calculation, customer management, and payment tracking.</div>
+            <div class="proj-tags">
+              <span class="tag tag-orange">Java</span>
+              <span class="tag tag-purple">SQL</span>
+              <span class="tag tag-green">OOP</span>
+            </div>
             <div class="proj-links">
-              <a href="https://github.com/MohammedZIMS/Electricity_Billing_System" target="_blank" rel="noopener noreferrer" class="proj-link"><i
-                  class="fab fa-github"></i> GitHub</a>
-              <a href="https://youtu.be/P10g7y3hpFA" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-youtube"></i>
-                Demo</a>
-              <a href="https://drive.google.com/file/d/1y8yLjaYMGx0v-KqVCg5LWi-FCM8aqJIQ/view" target="_blank" rel="noopener noreferrer"
-                class="proj-link"><i class="fa-regular fa-file-lines"></i> Document</a>
+              <a href="https://github.com/MohammedZIMS/Electricity_Billing_System" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://youtu.be/P10g7y3hpFA" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-youtube"></i> Demo</a>
+              <a href="https://drive.google.com/file/d/1y8yLjaYMGx0v-KqVCg5LWi-FCM8aqJIQ/view" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-regular fa-file-lines"></i> Document</a>
             </div>
           </div>
         </div>
 
+        <!-- 5. Rover -->
         <div class="proj-card reveal" data-category="hardware">
           <img class="proj-thumb" src="./assets/image/YoutubeVideoThumbnail_RMRA(Rover).jpg" alt="Rover"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -326,102 +324,109 @@
           <div class="proj-body">
             <div class="proj-type">Hardware · Robotics · IoT</div>
             <div class="proj-name">Remote Rover + Manipulator Arm</div>
-            <div class="proj-desc">Remote-controlled robotic rover with a precision manipulator arm and multi-sensor
-              integration.</div>
-            <div class="proj-tags"><span class="tag tag-orange">Embedded</span><span
-                class="tag tag-green">Arduino</span><span class="tag tag-blue">Sensors</span></div>
+            <div class="proj-desc">Remote-controlled robotic rover with a precision manipulator arm and multi-sensor integration.</div>
+            <div class="proj-tags">
+              <span class="tag tag-orange">Embedded</span>
+              <span class="tag tag-green">Arduino</span>
+              <span class="tag tag-purple">Sensors</span>
+            </div>
             <div class="proj-links">
-              <a href="https://github.com/imr4n4lif/remote-controlled-rover-with-manipulator-arm" target="_blank" rel="noopener noreferrer"
-                class="proj-link"><i class="fab fa-github"></i> GitHub</a>
-              <a href="https://www.youtube.com/shorts/7D8WrgrVdR4" target="_blank" rel="noopener noreferrer" class="proj-link"><i
-                  class="fab fa-youtube"></i> Demo</a>
-              <a href="https://drive.google.com/file/d/18lzHXB0w5_4CmbS7ZOe2AfLgBYVOQ-gd/view?usp=sharing"
-                target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-regular fa-file-lines"></i> Document</a>
+              <a href="https://github.com/imr4n4lif/remote-controlled-rover-with-manipulator-arm" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://www.youtube.com/shorts/7D8WrgrVdR4" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fab fa-youtube"></i> Demo</a>
+              <a href="https://drive.google.com/file/d/18lzHXB0w5_4CmbS7ZOe2AfLgBYVOQ-gd/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-regular fa-file-lines"></i> Document</a>
             </div>
           </div>
         </div>
 
+        <!-- 6. Seed Classification (AI) -->
         <div class="proj-card reveal" data-category="ai">
-          <div class="proj-thumb-placeholder" style="background:linear-gradient(135deg,#0d1a10,#0a1a16)"><i
-              class="fas fa-seedling" style="color:#00e5a0"></i></div>
+          <div class="proj-thumb-placeholder" style="background:linear-gradient(135deg,#0d1a10,#0a1a16)"><i class="fas fa-seedling" style="color:#00e5a0"></i></div>
           <div class="proj-body">
             <div class="res-badge"><i class="fas fa-flask"></i> Research</div>
             <div class="proj-type research">Deep Learning · Computer Vision</div>
             <div class="proj-name">Vegetable Seed Classification</div>
             <div class="proj-accuracy">99.59%</div>
             <div class="proj-desc">Classified 14 vegetable seed types using MobileNetV3 + transfer learning.</div>
-            <div class="proj-tags"><span class="tag tag-orange">TensorFlow</span><span
-                class="tag tag-blue">CNN</span><span class="tag tag-cyan">MobileNetV3</span><span
-                class="tag tag-green">EfficientNet</span></div>
-            <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i
-                  class="fa-regular fa-file-lines"></i> Paper in Progress</span></div>
+            <div class="proj-tags">
+              <span class="tag tag-orange">TensorFlow</span>
+              <span class="tag tag-purple">CNN</span>
+              <span class="tag tag-cyan">MobileNetV3</span>
+              <span class="tag tag-green">EfficientNet</span>
+            </div>
+            <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i class="fa-regular fa-file-lines"></i> Paper in Progress</span></div>
           </div>
         </div>
 
+        <!-- 7. Insect Classification (AI) -->
         <div class="proj-card reveal" data-category="ai">
-          <div class="proj-thumb-placeholder" style="background:linear-gradient(135deg,#1a0d0a,#1a130a)"><i
-              class="fas fa-bug" style="color:#ff7b5a"></i></div>
+          <div class="proj-thumb-placeholder" style="background:linear-gradient(135deg,#1a0d0a,#1a130a)"><i class="fas fa-bug" style="color:#ff7b5a"></i></div>
           <div class="proj-body">
             <div class="res-badge"><i class="fas fa-flask"></i> Research</div>
             <div class="proj-type research">Agricultural AI · Benchmark Study</div>
             <div class="proj-name">Insect Classification for Pest Detection</div>
             <div class="proj-accuracy">86.49%</div>
-            <div class="proj-desc">Benchmark comparing EfficientNetV2, MobileViT, Swin Transformer, and EfficientFormer
-              for agricultural pest detection.</div>
-            <div class="proj-tags"><span class="tag tag-orange">Swin Transformer</span><span
-                class="tag tag-blue">MobileViT</span><span class="tag tag-cyan">EfficientNetV2</span></div>
-            <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i
-                  class="fa-regular fa-file-lines"></i> Paper in Progress</span></div>
+            <div class="proj-desc">Benchmark comparing EfficientNetV2, MobileViT, Swin Transformer, and EfficientFormer for agricultural pest detection.</div>
+            <div class="proj-tags">
+              <span class="tag tag-orange">Swin Transformer</span>
+              <span class="tag tag-purple">MobileViT</span>
+              <span class="tag tag-cyan">EfficientNetV2</span>
+            </div>
+            <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i class="fa-regular fa-file-lines"></i> Paper in Progress</span></div>
           </div>
         </div>
 
+        <!-- 8. Potato Leaf Disease (AI) -->
         <div class="proj-card reveal" data-category="ai">
-          <div class="proj-thumb-placeholder" style="background:linear-gradient(135deg,#0d1a10,#0a1a16)"><i
-              class="fas fa-seedling" style="color:#00e5a0"></i></div>
+          <div class="proj-thumb-placeholder" style="background:linear-gradient(135deg,#0d1a10,#0a1a16)"><i class="fas fa-seedling" style="color:#00e5a0"></i></div>
           <div class="proj-body">
             <div class="res-badge"><i class="fas fa-flask"></i> Research</div>
             <div class="proj-type research">Agricultural AI · Benchmark Study</div>
             <div class="proj-name">Deep Transfer Learning for Multi-Class Potato Leaf Disease Classification</div>
             <div class="proj-accuracy">91.01%</div>
-            <div class="proj-desc">Benchmark comparing EfficientNetB2, EfficientNetB0, MobileNetV3-Large,
-              DenseNet121, CNN and ResNet50
-              for agricultural pest detection.</div>
-            <div class="proj-tags"><span class="tag tag-orange">ResNet50</span><span
-                class="tag tag-blue">DenseNet121</span><span class="tag tag-cyan">MobileNetV3-Large</span></div>
-            <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i
-                  class="fa-regular fa-file-lines"></i> Paper in Progress</span></div>
+            <div class="proj-desc">Benchmark comparing EfficientNetB2, EfficientNetB0, MobileNetV3-Large, DenseNet121, CNN and ResNet50 for agricultural pest detection.</div>
+            <div class="proj-tags">
+              <span class="tag tag-orange">ResNet50</span>
+              <span class="tag tag-purple">DenseNet121</span>
+              <span class="tag tag-cyan">MobileNetV3-Large</span>
+            </div>
+            <div class="proj-links"><span class="proj-link" style="opacity:.5;cursor:default"><i class="fa-regular fa-file-lines"></i> Paper in Progress</span></div>
           </div>
         </div>
+
       </div>
 
       <div class="show-more-wrap" id="showMoreWrap">
         <div class="show-more-hint">Showing <span id="visibleCount">6</span> of 8 projects</div>
-        <button class="show-more-btn" id="showMoreBtn"><i class="fas fa-chevron-down btn-icon"></i> Show More Projects
-          <span class="proj-count-pill">+2</span></button>
+        <button class="show-more-btn" id="showMoreBtn"><i class="fas fa-chevron-down btn-icon"></i> Show More Projects <span class="proj-count-pill">+2</span></button>
       </div>
     </section>
 
     <div class="section-divider"></div>
 
-    <!-- ── SKILLS ── -->
+    <!-- ═══ SKILLS ═══ -->
     <section id="skills" class="section">
       <div class="sec-eyebrow">Toolkit</div>
       <div class="sec-title">Technologies I build with.</div>
+
       <div class="skills-grid reveal">
+
         <div class="skill-card">
           <div class="skill-header">
             <div class="skill-icon"><i class="fas fa-code"></i></div>
             <div class="skill-title">Languages</div>
           </div>
-          <div class="skill-items"><span class="skill-tag">Java</span><span class="skill-tag">JavaScript</span><span
-              class="skill-tag">C/C++</span><span class="skill-tag">Python</span><span class="skill-tag">SQL</span>
+          <div class="skill-items">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">C/C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
           </div>
         </div>
+
         <div class="skill-card">
           <div class="skill-header">
-            <div class="skill-icon">
-              <i class="fas fa-server"></i>
-            </div>
+            <div class="skill-icon"><i class="fas fa-server"></i></div>
             <div class="skill-title">Backend</div>
           </div>
           <div class="skill-items">
@@ -431,55 +436,72 @@
             <span class="skill-tag">JWT Auth</span>
             <span class="skill-tag">Stripe</span>
           </div>
-
         </div>
+
         <div class="skill-card">
           <div class="skill-header">
             <div class="skill-icon"><i class="fas fa-paintbrush"></i></div>
             <div class="skill-title">Frontend</div>
           </div>
-          <div class="skill-items"><span class="skill-tag">React.js</span><span class="skill-tag">Redux
-              Toolkit</span><span class="skill-tag">RTK Query</span><span class="skill-tag">Tailwind CSS</span></div>
-
+          <div class="skill-items">
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Redux Toolkit</span>
+            <span class="skill-tag">RTK Query</span>
+            <span class="skill-tag">Tailwind CSS</span>
+          </div>
         </div>
+
         <div class="skill-card">
           <div class="skill-header">
             <div class="skill-icon"><i class="fas fa-database"></i></div>
             <div class="skill-title">Databases</div>
           </div>
-          <div class="skill-items"><span class="skill-tag">MongoDB</span><span class="skill-tag">PostgreSQL</span><span
-              class="skill-tag">MySQL</span></div>
-
+          <div class="skill-items">
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MySQL</span>
+          </div>
         </div>
+
         <div class="skill-card">
           <div class="skill-header">
             <div class="skill-icon"><i class="fas fa-brain"></i></div>
             <div class="skill-title">AI / Deep Learning</div>
           </div>
-          <div class="skill-items"><span class="skill-tag">TensorFlow</span><span class="skill-tag">Transfer
-              Learning</span><span class="skill-tag">CNN / ViT</span><span class="skill-tag">MobileNetV3</span><span
-              class="skill-tag">EfficientNet</span><span class="skill-tag">Swin Transformer</span></div>
-
+          <div class="skill-items">
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">Transfer Learning</span>
+            <span class="skill-tag">CNN / ViT</span>
+            <span class="skill-tag">MobileNetV3</span>
+            <span class="skill-tag">EfficientNet</span>
+            <span class="skill-tag">Swin Transformer</span>
+          </div>
         </div>
+
         <div class="skill-card">
           <div class="skill-header">
             <div class="skill-icon"><i class="fas fa-toolbox"></i></div>
             <div class="skill-title">Tools & Principles</div>
           </div>
-          <div class="skill-items"><span class="skill-tag">Git & GitHub</span><span class="skill-tag">VS
-              Code</span><span class="skill-tag">Docker</span></div>
-
+          <div class="skill-items">
+            <span class="skill-tag">Git & GitHub</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Docker</span>
+          </div>
         </div>
+
       </div>
     </section>
 
     <div class="section-divider"></div>
 
-    <!-- ── EDUCATION ── -->
+    <!-- ═══ EDUCATION ═══ -->
     <section id="education" class="section">
       <div class="sec-eyebrow">Credentials</div>
       <div class="sec-title">Education &amp; achievements.</div>
+
       <div class="edu-grid reveal">
+
         <div class="info-panel">
           <div class="info-panel-head"><i class="fas fa-university"></i> Academics</div>
           <div class="edu-item">
@@ -507,31 +529,41 @@
             </div>
           </div>
         </div>
+
         <div class="info-panel">
           <div class="info-panel-head"><i class="fas fa-certificate"></i> Certifications</div>
-          <div class="badge-list" style="padding:1rem 1.25rem 0 1.25rem"><span class="badge">Advanced Content Creation
-              With AI</span><span class="badge">Advanced Creative Design Mastery</span></div>
+          <div class="badge-list" style="padding:1rem 1.25rem 0 1.25rem">
+            <span class="badge">Advanced Content Creation With AI</span>
+            <span class="badge">Advanced Creative Design Mastery</span>
+          </div>
           <div class="info-panel-head"><i class="fas fa-dumbbell"></i> Strengths</div>
-          <div class="badge-list" style="padding:0 1.25rem .5rem 1.25rem"><span
-              class="badge">Problem-solving</span><span class="badge">Backend Architecture</span><span
-              class="badge">Fast Learner</span><span class="badge">Team Player</span></div>
+          <div class="badge-list" style="padding:0 1.25rem .5rem 1.25rem">
+            <span class="badge">Problem-solving</span>
+            <span class="badge">Backend Architecture</span>
+            <span class="badge">Fast Learner</span>
+            <span class="badge">Team Player</span>
+          </div>
         </div>
+
         <div class="info-panel">
           <div class="info-panel-head"><i class="fas fa-language"></i> Languages & Interests</div>
           <div class="info-row"><span class="info-k">🇧🇩 Bangla</span><span class="info-v">Native</span></div>
           <div class="info-row"><span class="info-k">🇬🇧 English</span><span class="info-v">Professional</span></div>
-          <div class="info-row"><span class="info-k"><i class="fas fa-heart" style="color: red;"></i> Interests</span><span
-              class="info-v">Software Dev · AI · Backend Architecture · Research</span></div>
+          <div class="info-row"><span class="info-k"><i class="fas fa-heart" style="color:red;"></i> Interests</span><span class="info-v">Software Dev · AI · Backend Architecture · Research</span></div>
         </div>
+
       </div>
+
       <div class="extracard reveal">
         <div style="display:flex;align-items:center;gap:1rem">
           <i class="fas fa-medal" style="font-size:1.8rem"></i>
           <div>
             <div style="font-weight:700">Extra-Curricular & Volunteer Work</div>
-            <div style="font-size:.85rem">✦ Campus Ambassador – ICT Olympiad Bangladesh (Season 3) · R.P. Shaha
-              University <br>✦ Volunteer – Bangladesh Red Crescent Society (BDRCS) <br>✦ Community Youth Volunteer – Cab
-              Bangladesh</div>
+            <div style="font-size:.85rem">
+              ✦ Campus Ambassador – ICT Olympiad Bangladesh (Season 3) · R.P. Shaha University <br>
+              ✦ Volunteer – Bangladesh Red Crescent Society (BDRCS) <br>
+              ✦ Community Youth Volunteer – Cab Bangladesh
+            </div>
           </div>
         </div>
       </div>
@@ -539,11 +571,14 @@
 
     <div class="section-divider"></div>
 
-    <!-- ── CONTACT ── -->
+    <!-- ═══ CONTACT ═══ -->
     <section id="contact" class="section">
       <div class="sec-eyebrow">Contact</div>
       <div class="sec-title">Let's Connect</div>
+
       <div class="contact-grid reveal">
+
+        <!-- ── Contact links ── -->
         <div>
           <a href="mailto:zimss75656@gmail.com" class="clink">
             <div class="clink-icon"><i class="fas fa-envelope"></i></div>
@@ -553,6 +588,7 @@
             </div>
             <span class="clink-arr"><i class="fas fa-arrow-right"></i></span>
           </a>
+
           <a href="https://github.com/MohammedZIMS" target="_blank" rel="noopener noreferrer" class="clink">
             <div class="clink-icon"><i class="fab fa-github"></i></div>
             <div>
@@ -561,6 +597,7 @@
             </div>
             <span class="clink-arr"><i class="fas fa-arrow-right"></i></span>
           </a>
+
           <a href="https://linkedin.com/in/mohammedzims" target="_blank" rel="noopener noreferrer" class="clink">
             <div class="clink-icon"><i class="fab fa-linkedin-in"></i></div>
             <div>
@@ -569,6 +606,7 @@
             </div>
             <span class="clink-arr"><i class="fas fa-arrow-right"></i></span>
           </a>
+
           <a href="https://youtube.com/@MohammedZIMS" target="_blank" rel="noopener noreferrer" class="clink">
             <div class="clink-icon"><i class="fab fa-youtube"></i></div>
             <div>
@@ -577,6 +615,7 @@
             </div>
             <span class="clink-arr"><i class="fas fa-arrow-right"></i></span>
           </a>
+
           <a href="https://www.facebook.com/md.zahidul.islam.mehedi.2024" target="_blank" rel="noopener noreferrer" class="clink">
             <div class="clink-icon"><i class="fab fa-facebook-f"></i></div>
             <div>
@@ -585,20 +624,20 @@
             </div>
             <span class="clink-arr"><i class="fas fa-arrow-right"></i></span>
           </a>
-
         </div>
 
+        <!-- ── Form box ── -->
         <div class="form-box">
-          <h3>Message</h3>
+          <h3><i class="fas fa-paper-plane"></i> Message</h3>
+
           <div class="form-group">
             <label>Hello,</label>
             <input placeholder="My name is Mehedi." readonly />
           </div>
+
           <div class="form-group">
             <label>Open for backend roles & collaborations.</label>
-            <textarea
-              placeholder="I'm open to backend developer roles, AI research collaborations, and interesting freelance projects. If you have something in mind — reach out. If you would like to contact with me, visit my social media accounts."
-              readonly></textarea>
+            <textarea placeholder="I'm open to backend developer roles, AI research collaborations, and interesting freelance projects. If you have something in mind — reach out. If you would like to contact with me, visit my social media accounts." readonly></textarea>
           </div>
 
           <div class="form-alt-contact">
@@ -610,44 +649,41 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
-  </div>
 
-  <!-- Floating toggle + menu -->
+  </div>
+  <!-- ─── end wrapper ─── -->
+
+  <!-- ─── FLOATING TOGGLE + MENU ─── -->
   <div id="float-toggle-wrap">
     <button id="float-toggle" title="Quick contact" aria-label="Open quick contact menu" aria-expanded="false" aria-controls="float-menu"><i class="fas fa-comment-dots"></i></button>
   </div>
+
   <div id="float-menu">
     <div class="float-wrap">
-      <button class="float-btn email" onclick="window.location.href='mailto:zimss75656@gmail.com'" title="Email" aria-label="Email me"><i
-          class="fas fa-envelope"></i></button>
+      <button class="float-btn email" onclick="window.location.href='mailto:zimss75656@gmail.com'" title="Email" aria-label="Email me"><i class="fas fa-envelope"></i></button>
       <span class="float-label">Email me</span>
     </div>
     <div class="float-wrap">
-      <!-- better Facebook link – replace with your real profile -->
-      <button class="float-btn facebook" onclick="window.open('https://www.facebook.com/md.zahidul.islam.mehedi.2024','_blank')" title="Facebook" aria-label="Message me on Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </button>
+      <button class="float-btn facebook" onclick="window.open('https://www.facebook.com/md.zahidul.islam.mehedi.2024','_blank')" title="Facebook" aria-label="Message me on Facebook"><i class="fab fa-facebook-f"></i></button>
       <span class="float-label">Facebook</span>
     </div>
     <div class="float-wrap">
-      <button class="float-btn linkedin" onclick="window.open('https://linkedin.com/in/mohammedzims','_blank')" title="LinkedIn" aria-label="Connect on LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </button>
+      <button class="float-btn linkedin" onclick="window.open('https://linkedin.com/in/mohammedzims','_blank')" title="LinkedIn" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin-in"></i></button>
       <span class="float-label">LinkedIn</span>
     </div>
     <div class="float-wrap">
-      <button class="float-btn github" onclick="window.open('https://github.com/MohammedZIMS','_blank')"
-        title="GitHub" aria-label="View GitHub profile">
-        <i class="fab fa-github"></i>
-      </button>
+      <button class="float-btn github" onclick="window.open('https://github.com/MohammedZIMS','_blank')" title="GitHub" aria-label="View GitHub profile"><i class="fab fa-github"></i></button>
       <span class="float-label">GitHub</span>
     </div>
   </div>
 
+  <!-- ─── BACK TO TOP ─── -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
+  <!-- ─── FOOTER ─── -->
   <footer>
     <div class="footer-copy">© 2026 <span>Md. Zahidul Islam Mehedi</span></div>
     <div class="footer-right">
@@ -657,7 +693,7 @@
     </div>
   </footer>
 
-  <!-- Three.js: powers the hero avatar's 3D wireframe scene (script.js no-ops gracefully if this fails to load) -->
+  <!-- ─── SCRIPTS ─── -->
   <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
   <script src="script.js"></script>
 </body>
