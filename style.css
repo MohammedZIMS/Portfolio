@@ -1522,7 +1522,7 @@ body.light .mobile-nav {
 }
 
 .clink:hover {
-  border-color: var(--cyan);
+  border-color: var(--gold-dim);
   transform: translateX(6px);
   box-shadow: var(--shadow-glow);
 }
@@ -1536,7 +1536,7 @@ body.light .mobile-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--cyan);
+  color: var(--primary);
   font-size: 0.9rem;
   flex-shrink: 0;
   transition: all 0.3s ease;
