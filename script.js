@@ -2,7 +2,7 @@
 
 // ── THEME ──
 const themeBtn = document.getElementById('themeBtn'),
-      body = document.body;
+  body = document.body;
 function applyTheme(l) {
   body.classList.toggle('light', l);
   themeBtn.querySelector('i').className = l ? 'fas fa-moon' : 'fas fa-sun';
@@ -20,7 +20,7 @@ themeBtn.addEventListener('click', () => {
 
 // ── MOBILE NAV ──
 const hamburger = document.getElementById('hamburger'),
-      mobileNav = document.getElementById('mobileNav');
+  mobileNav = document.getElementById('mobileNav');
 hamburger.addEventListener('click', e => {
   e.stopPropagation();
   const o = mobileNav.classList.toggle('open');
@@ -45,7 +45,7 @@ window.closeMobile = () => {
 
 // ── ACTIVE NAV ──
 const sections = document.querySelectorAll('section[id]'),
-      navLinks = document.querySelectorAll('.nav-links a');
+  navLinks = document.querySelectorAll('.nav-links a');
 const sectObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -58,7 +58,7 @@ const sectObs = new IntersectionObserver(entries => {
 sections.forEach(s => sectObs.observe(s));
 
 // ── SCROLL PROGRESS ──
-(function() {
+(function () {
   const progBar = document.getElementById('scroll-progress');
   if (!progBar) return;
   let ticking = false;
@@ -73,23 +73,23 @@ sections.forEach(s => sectObs.observe(s));
 })();
 
 // ── CURSOR GLOW ──
-(function() {
+(function () {
   const glow = document.getElementById('cursor-glow');
   if (!glow) return;
-  let x = window.innerWidth/2, y = window.innerHeight/2, tx = x, ty = y, raf = null;
+  let x = window.innerWidth / 2, y = window.innerHeight / 2, tx = x, ty = y, raf = null;
   function update() {
     x += (tx - x) * 0.08; y += (ty - y) * 0.08;
     glow.style.left = x + 'px'; glow.style.top = y + 'px';
     raf = requestAnimationFrame(update);
   }
   document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
-  document.addEventListener('touchmove', e => { const t = e.touches[0]; if(t){ tx = t.clientX; ty = t.clientY; } }, { passive: true });
+  document.addEventListener('touchmove', e => { const t = e.touches[0]; if (t) { tx = t.clientX; ty = t.clientY; } }, { passive: true });
   update();
-  window.addEventListener('beforeunload', () => { if(raf) cancelAnimationFrame(raf); });
+  window.addEventListener('beforeunload', () => { if (raf) cancelAnimationFrame(raf); });
 })();
 
 // ── TYPEWRITER ──
-(function() {
+(function () {
   const roleElement = document.getElementById('roleWord');
   if (!roleElement) return;
   const roles = ['CSE Student.', 'Full-Stack Developer.', 'AI Researcher.', 'Problem Solver.'];
@@ -169,7 +169,7 @@ const revealObserver = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // ── PROJECT FILTER + SHOW MORE ──
-(function() {
+(function () {
   const allCards = Array.from(document.querySelectorAll('.proj-card'));
   const showMoreWrap = document.getElementById('showMoreWrap');
   const showBtn = document.getElementById('showMoreBtn');
@@ -229,7 +229,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // ── AVATAR FALLBACK ──
 const avatarImg = document.getElementById('avatarImg'),
-      avatarFallback = document.getElementById('avatarFallback');
+  avatarFallback = document.getElementById('avatarFallback');
 if (avatarImg) {
   avatarImg.addEventListener('error', () => {
     avatarImg.style.display = 'none';
@@ -261,7 +261,7 @@ setInterval(updateClock, 1000);
 
 // ── FLOATING CONTACT MENU ──
 const floatToggle = document.getElementById('float-toggle'),
-      floatMenu = document.getElementById('float-menu');
+  floatMenu = document.getElementById('float-menu');
 let floatOpen = false;
 floatToggle.addEventListener('click', () => {
   floatOpen = !floatOpen;
@@ -273,14 +273,14 @@ floatToggle.addEventListener('click', () => {
 
 // ── SMOOTH SCROLL ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+  anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
     if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
   });
 });
 
 // ── HERO 3D ORBIT (Three.js) – unchanged ──
-(function() {
+(function () {
   const canvas = document.getElementById('hero3d');
   if (!canvas || typeof THREE === 'undefined') return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -317,9 +317,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const r = 3 + Math.random() * 1.2;
     const theta = Math.random() * Math.PI * 2;
     const phi = Math.acos((Math.random() * 2) - 1);
-    positions[i*3] = r * Math.sin(phi) * Math.cos(theta);
-    positions[i*3+1] = r * Math.sin(phi) * Math.sin(theta);
-    positions[i*3+2] = r * Math.cos(phi);
+    positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+    positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+    positions[i * 3 + 2] = r * Math.cos(phi);
   }
   starGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
   const starMat = new THREE.PointsMaterial({ color: primaryColor, size: 0.035, transparent: true, opacity: 0.7 });
