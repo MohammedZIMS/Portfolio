@@ -237,7 +237,7 @@ body.light .navbar {
   gap: 1rem;
 }
 
-.nav-logo {
+.nav-logo a {
   font-family: var(--mono);
   font-weight: 800;
   font-size: 1rem;
@@ -246,12 +246,12 @@ body.light .navbar {
   position: relative;
 }
 
-.nav-logo span {
+.nav-logo a span {
   color: var(--text-secondary);
   font-weight: 400;
 }
 
-.nav-logo::after {
+.nav-logo a::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -1637,7 +1637,7 @@ body.light .mobile-nav {
 .back-to-top:hover {
   background: var(--cyan-dim-strong);
   border-color: var(--cyan);
-  color: #06060f;
+  color: var(--text-bright);
   transform: translateY(-4px);
   box-shadow: var(--shadow-glow);
 }
@@ -1709,6 +1709,8 @@ FLOATING MENU
 
 #float-toggle:hover {
   transform: scale(1.05);
+  border: 1px solid var(--cyan);
+  background-color: var(--cyan-dim-strong);
   box-shadow: 0 8px 40px var(--cyan-dim);
 }
 
