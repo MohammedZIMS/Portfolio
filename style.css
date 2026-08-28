@@ -1291,6 +1291,9 @@ body.light .mobile-nav {
 }
 
 .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   background: var(--cyan-dim);
   border: 1px solid var(--border);
   color: var(--text-secondary);
@@ -1301,12 +1304,26 @@ body.light .mobile-nav {
   transition: all .3s;
   letter-spacing: .01em;
   white-space: nowrap;
+  cursor: pointer;
+}
+
+.badge-list a:hover .badge {
+  color: var(--text-bright);
+  border-color: var(--cyan);
+  transform: scale(1.04);
+  background: var(--cyan-dim-strong);
 }
 
 .badge:hover {
   color: var(--text-bright);
   border-color: var(--cyan);
   transform: scale(1.04);
+}
+
+.badge-list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--cyan);
 }
 
 .extracard {
